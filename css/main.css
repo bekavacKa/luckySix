@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Smooch Sans", sans-serif;
+  color: whitesmoke;
+  font-size: 16px;
+}
+
+main {
+  background: #0f51f6;
+}
+
+header, footer {
+  background: #080808;
+  color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 30px 0;
+  border-bottom: 2px solid whitesmoke;
+}
+
+header h2, footer h2, header h1, footer h1 {
+  width: 20%;
+  text-align: center;
+}
+
+.mainView {
+  padding: 50px 80px;
+  text-align: center;
+}
+
+.mainView .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mainView .wrapper .asideSix {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainView .wrapper .asideSix .lBox {
+  margin: 10px 0;
+  height: 70px;
+  width: 70px;
+  border: 4px solid whitesmoke;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
+  background: linear-gradient(rgba(20, 19, 19, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3px;
+}
+
+.mainView .wrapper .firstSix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainView .wrapper .firstSix .groupFS {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mainView .wrapper .firstSix .groupFS .tBox {
+  margin: 0 10px;
+  height: 70px;
+  width: 70px;
+  border: 4px solid whitesmoke;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
+  background: linear-gradient(rgba(20, 19, 19, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainView .wrapper .firstSix .groupFS .tBox .outputNums {
+  font-size: 2.5rem;
+}
+
+.mainView .wrapper .firstSix .centralBox {
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 100px;
+}
+
+.mainView .wrapper .firstSix .centralBox .cBox {
+  height: 320px;
+  width: 320px;
+  border: 5px solid whitesmoke;
+  border-radius: 50%;
+  font-size: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainView .wrapper .firstSix .centralBox .time {
+  padding: 5px;
+}
+
+.mainView .wrapper .firstSix .centralBox .outputNums {
+  background: nista;
+}
+
+.mainView .wrapper .firstSix .bottomBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mainView .wrapper .firstSix .bottomBox .groupB {
+  padding: 0 60px;
+}
+
+.mainView .wrapper .firstSix .bottomBox .groupB .bBox {
+  margin: 10px 0;
+  height: 70px;
+  width: 70px;
+  border: 4px solid whitesmoke;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
+  background: linear-gradient(rgba(20, 19, 19, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3px;
+}
+
+footer {
+  width: 100%;
+  border-bottom: none;
+  border-top: 2px solid whitesmoke;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@200&display=swap');
+$bodyFont:  'Smooch Sans', sans-serif;
+$blue01: #0f51f6;
+$black01: rgb(8, 8, 8);
+$white01: whitesmoke;
+$back: linear-gradient(rgba(20, 19, 19, 0.5));
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $bodyFont;
+    color: $white01;
+    font-size: 16px;
+}
+
+
+main{
+    background: $blue01;
+}
+header{
+    background: $black01;
+    color: $white01;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    border-bottom: 2px solid $white01;
+    h2, h1{
+        width: 20%;
+        text-align: center;
+    }
+}
+.mainView{
+    padding: 50px 80px;
+    text-align: center;
+
+    .wrapper{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .asideSix{
+            flex-direction: column;
+            .lBox{
+                margin: 10px 0;
+                height: 70px;
+                width: 70px;
+                border: 4px solid $white01;
+                border-radius: 50%;
+                background: $back ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 3px;
+            }
+        }
+    
+        .firstSix{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            .groupFS{
+                display: flex;
+                flex-direction: row;
+                .tBox{
+                    margin: 0 10px;
+                    height: 70px;
+                    width: 70px;
+                    border: 4px solid $white01;
+                    border-radius: 50%;
+                    background: $back ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .outputNums{
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+            .centralBox{
+                margin: 30px 0;
+                display: flex;
+                justify-content: center;
+                padding: 0 100px;
+                .cBox{
+                    height: 320px;
+                    width: 320px;
+                    border: 5px solid $white01;
+                    border-radius: 50%;
+                    font-size: 5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .time{
+                    padding: 5px;
+                }
+                .outputNums{
+                    background: nista ;
+                }
+            }
+            .bottomBox{
+                display: flex;
+                justify-content: space-around;
+                .groupB{ 
+                    padding: 0 60px;                   
+                    .bBox{
+                        margin: 10px 0;
+                        height: 70px;
+                        width: 70px;
+                        border: 4px solid $white01;
+                        border-radius: 50%;
+                        background: $back ;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 3px;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+
+footer{
+    @extend header;
+    width: 100%;
+    border-bottom: none;
+    border-top: 2px solid $white01;
+}
