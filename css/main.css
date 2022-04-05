@@ -104,7 +104,20 @@ header h2, footer h2, header h1, footer h1 {
           flex-direction: column;
 }
 
-.mainView .wrapper .asideSix .lBox {
+.mainView .wrapper .asideSix .boxWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainView .wrapper .asideSix .boxWrapper .lBox {
   margin: 8px 0;
   height: 70px;
   width: 70px;
@@ -125,7 +138,7 @@ header h2, footer h2, header h1, footer h1 {
   font-size: 1.1rem;
 }
 
-.mainView .wrapper .asideSix .lBox .outputNums {
+.mainView .wrapper .asideSix .boxWrapper .lBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
@@ -135,6 +148,15 @@ header h2, footer h2, header h1, footer h1 {
   width: 35px;
   padding: 2px;
   border-radius: 50%;
+}
+
+.mainView .wrapper .asideSix .boxWrapper .amount {
+  color: rgba(0, 0, 0, 0.297);
+  -webkit-transition: ease-in 0.4s;
+  transition: ease-in 0.4s;
+  padding: 15px;
+  font-size: 1.5rem;
+  margin: auto 0;
 }
 
 .mainView .wrapper .centralView {
@@ -205,13 +227,26 @@ header h2, footer h2, header h1, footer h1 {
 }
 
 .mainView .wrapper .centralView .bottomBox .groupB {
-  padding: 0 85px;
+  padding: 0 65px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .bBox {
+.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox {
   margin: 10px 0;
   height: 70px;
   width: 70px;
@@ -232,7 +267,7 @@ header h2, footer h2, header h1, footer h1 {
   font-size: 1.1rem;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .bBox .outputNums {
+.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
@@ -242,6 +277,15 @@ header h2, footer h2, header h1, footer h1 {
   width: 35px;
   padding: 2px;
   border-radius: 50%;
+}
+
+.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .amount {
+  color: rgba(0, 0, 0, 0.297);
+  -webkit-transition: ease-in 0.4s;
+  transition: ease-in 0.4s;
+  padding: 15px;
+  font-size: 1.5rem;
+  margin: auto 0;
 }
 
 footer {

@@ -2,6 +2,7 @@ let timer = document.querySelector('.cBox');
 let topBoxes = document.querySelectorAll('.tBox');
 let allBoxes = document.querySelectorAll('.allBox');
 let roundNum = document.querySelector('.roundNumber');
+let amount = document.querySelectorAll('.amount');
 
 let round = 69;
 let mins = 0;
@@ -76,6 +77,9 @@ function displayWinNums(){
                 case 41:
                     timer.style.background = "red";
                     allBoxes[counter].style.background = "red";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    } 
                     break;
 
                 case 2:
@@ -86,6 +90,9 @@ function displayWinNums(){
                 case 42:
                     timer.style.background = "green";
                     allBoxes[counter].style.background = "green";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 3:
@@ -96,6 +103,9 @@ function displayWinNums(){
                 case 43:
                     timer.style.background = "blue";
                     allBoxes[counter].style.background = "blue";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 4:
@@ -106,6 +116,9 @@ function displayWinNums(){
                 case 44:
                     timer.style.background = "purple";
                     allBoxes[counter].style.background = "purple";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 5:
@@ -116,6 +129,9 @@ function displayWinNums(){
                 case 45:
                     timer.style.background = "burlywood";
                     allBoxes[counter].style.background = "burlywood";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 6:
@@ -126,6 +142,9 @@ function displayWinNums(){
                 case 46:
                     timer.style.background = "yellow";
                     allBoxes[counter].style.background = "yellow";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 7:
@@ -136,6 +155,9 @@ function displayWinNums(){
                 case 47:
                     timer.style.background = "orange";
                     allBoxes[counter].style.background = "orange";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 case 8:
@@ -146,13 +168,19 @@ function displayWinNums(){
                 case 48:
                     timer.style.background = "black";
                     allBoxes[counter].style.background = "black";
+                    if(counter >= 5){
+                        amount[counter - 5].style.color = "white";
+                    }
                     break;
 
                 default:
                     break;
             }
             timer.innerHTML =  `<h1 class="showNums animate__animated animate__tada"> ${numsShuffle[counter]} </h1>`;
-            allBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`;    
+            allBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`;
+
+
+        
             counter++;
         }
         

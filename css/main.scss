@@ -74,27 +74,39 @@ header{
 
         .asideSix{
             flex-direction: column;
-            .lBox{
-                margin: 8px 0;
-                height: 70px;
-                width: 70px;
-                border: 2px solid $white01;
-                border-radius: 50%;
-                background: $back ;
+            .boxWrapper{
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 3px;
-                font-size: 1.1rem;
-                .outputNums{
-                    font-size: 1.6rem;
-                    text-shadow: 0 0 7px black;
-                    box-shadow: 0 0 15px white;
-                    background-color: rgba(255, 255, 255, 0.35);
-                    height: 35px;
-                    width: 35px;
-                    padding: 2px;
+                flex-direction: row;
+                justify-content: space-between;
+                .lBox{
+                    margin: 8px 0;
+                    height: 70px;
+                    width: 70px;
+                    border: 2px solid $white01;
                     border-radius: 50%;
+                    background: $back ;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 3px;
+                    font-size: 1.1rem;
+                    .outputNums{
+                        font-size: 1.6rem;
+                        text-shadow: 0 0 7px black;
+                        box-shadow: 0 0 15px white;
+                        background-color: rgba(255, 255, 255, 0.35);
+                        height: 35px;
+                        width: 35px;
+                        padding: 2px;
+                        border-radius: 50%;
+                    }
+                }
+                .amount{
+                    color: rgba(0, 0, 0, 0.297);
+                    transition: ease-in 0.4s;
+                    padding: 15px;
+                    font-size: 1.5rem;
+                    margin: auto 0;
                 }
             }
         }
@@ -136,29 +148,41 @@ header{
                 display: flex;
                 justify-content: space-around;
                 .groupB{ 
-                    padding: 0 85px;
+                    padding: 0 65px;
                     align-items: flex-end;                  
-                    .bBox{
-                        margin: 10px 0;
-                        height: 70px;
-                        width: 70px;
-                        border: 2px solid $white01;
-                        border-radius: 50%;
-                        background: $back ;
+                    .boxWrapper{
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 3px;
-                        font-size: 1.1rem;
-                        .outputNums{
-                            font-size: 1.6rem;
-                            text-shadow: 0 0 7px black;
-                            box-shadow: 0 0 15px white;
-                            background-color: rgba(255, 255, 255, 0.35);
-                            height: 35px;
-                            width: 35px;
-                            padding: 2px;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .bBox{
+                            margin: 10px 0;
+                            height: 70px;
+                            width: 70px;
+                            border: 2px solid $white01;
                             border-radius: 50%;
+                            background: $back ;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 3px;
+                            font-size: 1.1rem;
+                            .outputNums{
+                                font-size: 1.6rem;
+                                text-shadow: 0 0 7px black;
+                                box-shadow: 0 0 15px white;
+                                background-color: rgba(255, 255, 255, 0.35);
+                                height: 35px;
+                                width: 35px;
+                                padding: 2px;
+                                border-radius: 50%;
+                            }
+                        }
+                        .amount{
+                            color: rgba(0, 0, 0, 0.297);
+                            transition: ease-in 0.4s;
+                            padding: 15px;
+                            font-size: 1.5rem;
+                            margin: auto 0;
                         }
                     }
                 }
