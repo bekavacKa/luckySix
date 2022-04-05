@@ -64,8 +64,7 @@ function displayWinNums(){
         if(counter === numsShuffle.length){
             clearInterval(loop);
             timer.style.background = "yellowgreen";
-            timer.innerHTML =  `<h1 class="time"> The End </h1>`;
-
+            timer.innerHTML =  `<h1 class="time"> Results </h1>`;
         }else{
 
             switch (numsShuffle[counter]) {
@@ -152,10 +151,10 @@ function displayWinNums(){
                 default:
                     break;
             }
-            timer.innerHTML =  `<h1 class="showNums"> ${numsShuffle[counter]} </h1>`;
+            timer.innerHTML =  `<h1 class="showNums animate__animated animate__tada"> ${numsShuffle[counter]} </h1>`;
             allBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`;    
             counter++;
         }
         
-    }, 1000);
+    }, 1500);
 }
