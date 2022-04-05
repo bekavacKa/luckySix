@@ -1,10 +1,11 @@
 let timer = document.querySelector('.cBox');
 let topBoxes = document.querySelectorAll('.tBox');
 let allBoxes = document.querySelectorAll('.allBox');
+let roundNum = document.querySelector('.roundNumber');
 
-
+let round = 69;
 let mins = 0;
-let sec = 11;
+let sec = 2;
 let nums = [];
 let numsShuffle = [];
 let randomNum;
@@ -19,7 +20,8 @@ function stratTime(){
         if(sec === 0 && mins >= 0){
             if(sec === 0 && mins === 0){
                 clearInterval(loop);
-                timer.innerHTML =  `<h1 class="time"> Good luck </h1>`;
+                roundNum.innerHTML = round;
+                timer.innerHTML =  `<h1 class="time"> READY ? </h1>`;
                 timer.style.background = "yellowgreen";
                 createNums();
             }else{
@@ -30,7 +32,7 @@ function stratTime(){
             }
         }else{
             sec--;
-            if(sec < 10){
+            if(sec < 9){
                 timer.innerHTML = `<h1 class="time">0${mins} : 0${sec}</h1>`;
             }
         }    
@@ -48,7 +50,6 @@ function getRandomNums(){
 
     while(nums.length > 13){
         let rand = Math.floor(Math.random() * nums.length);
-
         numsShuffle.push(nums[rand]);
         nums.splice(rand, 1);
     }
@@ -75,7 +76,7 @@ function displayWinNums(){
                 case 33:
                 case 41:
                     timer.style.background = "red";
-
+                    allBoxes[counter].style.background = "red";
                     break;
 
                 case 2:
@@ -85,6 +86,7 @@ function displayWinNums(){
                 case 34:
                 case 42:
                     timer.style.background = "green";
+                    allBoxes[counter].style.background = "green";
                     break;
 
                 case 3:
@@ -94,6 +96,7 @@ function displayWinNums(){
                 case 35:
                 case 43:
                     timer.style.background = "blue";
+                    allBoxes[counter].style.background = "blue";
                     break;
 
                 case 4:
@@ -103,6 +106,7 @@ function displayWinNums(){
                 case 36:
                 case 44:
                     timer.style.background = "purple";
+                    allBoxes[counter].style.background = "purple";
                     break;
 
                 case 5:
@@ -112,6 +116,7 @@ function displayWinNums(){
                 case 37:
                 case 45:
                     timer.style.background = "burlywood";
+                    allBoxes[counter].style.background = "burlywood";
                     break;
 
                 case 6:
@@ -121,6 +126,7 @@ function displayWinNums(){
                 case 38:
                 case 46:
                     timer.style.background = "yellow";
+                    allBoxes[counter].style.background = "yellow";
                     break;
 
                 case 7:
@@ -130,6 +136,7 @@ function displayWinNums(){
                 case 39:
                 case 47:
                     timer.style.background = "orange";
+                    allBoxes[counter].style.background = "orange";
                     break;
 
                 case 8:
@@ -139,19 +146,14 @@ function displayWinNums(){
                 case 40:
                 case 48:
                     timer.style.background = "black";
+                    allBoxes[counter].style.background = "black";
                     break;
 
                 default:
                     break;
             }
-
-            // timer.style.background = "linear-gradient(rgba(252, 251, 251, 0.5), rgba(10, 10, 10, 0.5))";
-            timer.innerHTML =  `<h1 class="time"> ${numsShuffle[counter]} </h1>`;
-            // ovo dole radi ali moram napravit za ostale kuglice
-            // topBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`; 
-           
-
-            
+            timer.innerHTML =  `<h1 class="showNums"> ${numsShuffle[counter]} </h1>`;
+            allBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`;    
             counter++;
         }
         

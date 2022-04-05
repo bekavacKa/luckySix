@@ -41,12 +41,40 @@ header{
         justify-content: space-around;
         flex-wrap: wrap;
 
+        .groupFS{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            .tBox{
+                margin: 0 10px;
+                height: 90px;
+                width: 90px;
+                border: 4px solid $white01;
+                border-radius: 50%;
+                background: $back ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .outputNums{
+                    font-size: 2rem;
+                    text-shadow: 0 0 7px black;
+                    box-shadow: 0 0 15px white;
+                    background-color: rgba(255, 255, 255, 0.35);
+                    height: 45px;
+                    width: 45px;
+                    padding: 3px;
+                    border-radius: 50%;
+                }
+            }
+        }
+
         .asideSix{
             flex-direction: column;
             .lBox{
                 margin: 10px 0;
-                height: 70px;
-                width: 70px;
+                height: 75px;
+                width: 75px;
                 border: 4px solid $white01;
                 border-radius: 50%;
                 background: $back ;
@@ -54,34 +82,27 @@ header{
                 align-items: center;
                 justify-content: center;
                 padding: 3px;
+                font-size: 1.2rem;
+                .outputNums{
+                    font-size: 1.8rem;
+                    text-shadow: 0 0 7px black;
+                    box-shadow: 0 0 15px white;
+                    background-color: rgba(255, 255, 255, 0.35);
+                    height: 35px;
+                    width: 35px;
+                    padding: 2px;
+                    border-radius: 50%;
+                }
             }
         }
     
-        .firstSix{
+        .centralView{
             display: flex;
             align-items: center;
             justify-content: space-around;
             flex-direction: column;
-            .groupFS{
-                display: flex;
-                flex-direction: row;
-                .tBox{
-                    margin: 0 10px;
-                    height: 70px;
-                    width: 70px;
-                    border: 4px solid $white01;
-                    border-radius: 50%;
-                    background: $back ;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    .outputNums{
-                        font-size: 2.5rem;
-                    }
-                }
-            }
             .centralBox{
-                margin: 30px 0;
+                margin: 80px 0;
                 display: flex;
                 justify-content: center;
                 padding: 0 100px;
@@ -94,23 +115,31 @@ header{
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    
                 }
                 .time{
                     padding: 5px;
                 }
-                .outputNums{
-                    background: nista ;
+                .showNums{
+                    text-shadow: 0 0 7px black;
+                    box-shadow: 0 0 15px white;
+                    background-color: rgba(255, 255, 255, 0.35);
+                    height: 150px;
+                    width: 150px;
+                    border-radius: 50%;
+                    padding: 15px;
                 }
             }
             .bottomBox{
                 display: flex;
                 justify-content: space-around;
                 .groupB{ 
-                    padding: 0 60px;                   
+                    padding: 0 80px;
+                    align-items: flex-end;                  
                     .bBox{
-                        margin: 10px 0;
-                        height: 70px;
-                        width: 70px;
+                        margin: 15px 0;
+                        height: 75px;
+                        width: 75px;
                         border: 4px solid $white01;
                         border-radius: 50%;
                         background: $back ;
@@ -118,6 +147,17 @@ header{
                         align-items: center;
                         justify-content: center;
                         padding: 3px;
+                        font-size: 1.2rem;
+                        .outputNums{
+                            font-size: 1.8rem;
+                            text-shadow: 0 0 7px black;
+                            box-shadow: 0 0 15px white;
+                            background-color: rgba(255, 255, 255, 0.35);
+                            height: 35px;
+                            width: 35px;
+                            padding: 2px;
+                            border-radius: 50%;
+                        } 
                     }
                 }
             }
@@ -132,4 +172,14 @@ footer{
     width: 100%;
     border-bottom: none;
     border-top: 2px solid $white01;
+    padding: 40px;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 2px;
+    h4{
+        margin-top: 15px;
+        letter-spacing: 2.5px;
+    }
 }

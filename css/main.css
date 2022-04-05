@@ -48,6 +48,51 @@ header h2, footer h2, header h1, footer h1 {
       flex-wrap: wrap;
 }
 
+.mainView .wrapper .groupFS {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.mainView .wrapper .groupFS .tBox {
+  margin: 0 10px;
+  height: 90px;
+  width: 90px;
+  border: 4px solid whitesmoke;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
+  background: linear-gradient(rgba(20, 19, 19, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainView .wrapper .groupFS .tBox .outputNums {
+  font-size: 2rem;
+  text-shadow: 0 0 7px black;
+  -webkit-box-shadow: 0 0 15px white;
+          box-shadow: 0 0 15px white;
+  background-color: rgba(255, 255, 255, 0.35);
+  height: 45px;
+  width: 45px;
+  padding: 3px;
+  border-radius: 50%;
+}
+
 .mainView .wrapper .asideSix {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -57,8 +102,8 @@ header h2, footer h2, header h1, footer h1 {
 
 .mainView .wrapper .asideSix .lBox {
   margin: 10px 0;
-  height: 70px;
-  width: 70px;
+  height: 75px;
+  width: 75px;
   border: 4px solid whitesmoke;
   border-radius: 50%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
@@ -73,9 +118,22 @@ header h2, footer h2, header h1, footer h1 {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 3px;
+  font-size: 1.2rem;
 }
 
-.mainView .wrapper .firstSix {
+.mainView .wrapper .asideSix .lBox .outputNums {
+  font-size: 1.8rem;
+  text-shadow: 0 0 7px black;
+  -webkit-box-shadow: 0 0 15px white;
+          box-shadow: 0 0 15px white;
+  background-color: rgba(255, 255, 255, 0.35);
+  height: 35px;
+  width: 35px;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.mainView .wrapper .centralView {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,41 +148,8 @@ header h2, footer h2, header h1, footer h1 {
           flex-direction: column;
 }
 
-.mainView .wrapper .firstSix .groupFS {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.mainView .wrapper .firstSix .groupFS .tBox {
-  margin: 0 10px;
-  height: 70px;
-  width: 70px;
-  border: 4px solid whitesmoke;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
-  background: linear-gradient(rgba(20, 19, 19, 0.5));
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.mainView .wrapper .firstSix .groupFS .tBox .outputNums {
-  font-size: 2.5rem;
-}
-
-.mainView .wrapper .firstSix .centralBox {
-  margin: 30px 0;
+.mainView .wrapper .centralView .centralBox {
+  margin: 80px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,7 +159,7 @@ header h2, footer h2, header h1, footer h1 {
   padding: 0 100px;
 }
 
-.mainView .wrapper .firstSix .centralBox .cBox {
+.mainView .wrapper .centralView .centralBox .cBox {
   height: 320px;
   width: 320px;
   border: 5px solid whitesmoke;
@@ -151,15 +176,22 @@ header h2, footer h2, header h1, footer h1 {
           align-items: center;
 }
 
-.mainView .wrapper .firstSix .centralBox .time {
+.mainView .wrapper .centralView .centralBox .time {
   padding: 5px;
 }
 
-.mainView .wrapper .firstSix .centralBox .outputNums {
-  background: nista;
+.mainView .wrapper .centralView .centralBox .showNums {
+  text-shadow: 0 0 7px black;
+  -webkit-box-shadow: 0 0 15px white;
+          box-shadow: 0 0 15px white;
+  background-color: rgba(255, 255, 255, 0.35);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  padding: 15px;
 }
 
-.mainView .wrapper .firstSix .bottomBox {
+.mainView .wrapper .centralView .bottomBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,14 +199,17 @@ header h2, footer h2, header h1, footer h1 {
       justify-content: space-around;
 }
 
-.mainView .wrapper .firstSix .bottomBox .groupB {
-  padding: 0 60px;
+.mainView .wrapper .centralView .bottomBox .groupB {
+  padding: 0 80px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.mainView .wrapper .firstSix .bottomBox .groupB .bBox {
-  margin: 10px 0;
-  height: 70px;
-  width: 70px;
+.mainView .wrapper .centralView .bottomBox .groupB .bBox {
+  margin: 15px 0;
+  height: 75px;
+  width: 75px;
   border: 4px solid whitesmoke;
   border-radius: 50%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
@@ -189,11 +224,41 @@ header h2, footer h2, header h1, footer h1 {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 3px;
+  font-size: 1.2rem;
+}
+
+.mainView .wrapper .centralView .bottomBox .groupB .bBox .outputNums {
+  font-size: 1.8rem;
+  text-shadow: 0 0 7px black;
+  -webkit-box-shadow: 0 0 15px white;
+          box-shadow: 0 0 15px white;
+  background-color: rgba(255, 255, 255, 0.35);
+  height: 35px;
+  width: 35px;
+  padding: 2px;
+  border-radius: 50%;
 }
 
 footer {
   width: 100%;
   border-bottom: none;
   border-top: 2px solid whitesmoke;
+  padding: 40px;
+  font-size: 1.5rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 2px;
+}
+
+footer h4 {
+  margin-top: 15px;
+  letter-spacing: 2.5px;
 }
 /*# sourceMappingURL=main.css.map */

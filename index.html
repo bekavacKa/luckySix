@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky-Six</title>
     <link rel="stylesheet" href="css/main.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
 
@@ -13,12 +17,20 @@
         <header>
             <h2>Try Your luck!</h2>
             <h1>Lucky six</h1>
-            <h2>Round: </h2>
+            <h2> Round : <span class="roundNumber"></span></h2>
         </header>
 
         <section class="mainView">
 
             <article class="wrapper">
+
+                <div class="groupFS">
+                    <div class="tBox allBox"></div>
+                    <div class="tBox allBox"></div>
+                    <div class="tBox allBox"></div>
+                    <div class="tBox allBox"></div>
+                    <div class="tBox allBox"></div>
+                </div>
 
                 <div class="asideSix">
                     <div class="lBox allBox">
@@ -50,15 +62,7 @@
                     </div>
                 </div>
 
-                <div class="firstSix">
-
-                    <div class="groupFS">
-                        <div class="tBox"></div>
-                        <div class="tBox"></div>
-                        <div class="tBox"></div>
-                        <div class="tBox"></div>
-                        <div class="tBox"></div>
-                    </div>
+                <div class="centralView">
 
                     <div class="centralBox">
                         <div class="cBox">
@@ -121,9 +125,8 @@
     </main>
 
     <footer>
-        <h2>Try Your luck!</h2>
         <h1>Lucky six</h1>
-        <h2>Round: </h2>
+        <h4>&copy Kažimir Bekavac 2022.</h4>
     </footer>
 
     <script src="main.js"></script>
