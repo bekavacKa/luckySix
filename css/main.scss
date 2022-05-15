@@ -4,6 +4,37 @@ $blue01: #0f51f6;
 $black01: rgb(8, 8, 8);
 $white01: whitesmoke;
 $back: linear-gradient(rgba(20, 19, 19, 0.5));
+$backResults: #222c36;
+$backNums: #15191c;
+
+// MIXIN
+
+@mixin box-results {
+    margin: 20px 10px 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: $backNums;
+    color: gray;
+}
+@mixin activiti-result($color){
+    border: 3px solid $color;
+    color: white;
+    background-color: rgb(71, 70, 70);
+}
+@mixin dots($color){
+    height: 20px;
+    width: 20px;
+    background-color: $color;
+    border-radius: 50%;
+    margin: 0px auto;
+}
+
 
 *{
     padding: 0;
@@ -22,179 +53,348 @@ body{
 
 main{
     background: $blue01;
-}
-header{
-    background: $black01;
-    color: $white01;
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 0;
-    border-bottom: 2px solid $white01;
-    h2, h1{
-        width: 20%;
-        text-align: center;
-    }
-}
-.mainView{
-    padding: 50px 80px;
-    text-align: center;
-
-    .wrapper{
+    padding-bottom: 30px;
+    header{
+        background: $black01;
+        color: $white01;
         display: flex;
         justify-content: space-around;
-        flex-wrap: wrap;
-
-        .groupFS{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 100%;
-            .tBox{
-                margin: 0 20px;
-                height: 80px;
-                width: 80px;
-                border: 3px solid $white01;
-                border-radius: 50%;
-                background: $back ;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .outputNums{
-                    font-size: 1.8rem;
-                    text-shadow: 0 0 7px black;
-                    box-shadow: 0 0 15px white;
-                    background-color: rgba(255, 255, 255, 0.35);
-                    height: 40px;
-                    width: 40px;
-                    padding: 3px;
-                    border-radius: 50%;
-                }
-            }
+        padding: 30px 0;
+        border-bottom: 2px solid $white01;
+        h2, h1{
+            width: 20%;
+            text-align: center;
         }
-
-        .asideSix{
-            flex-direction: column;
-            .boxWrapper{
+        .startBtn{
+            padding: 15px 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 2px solid $white01;
+        }
+        .startBtn:hover{
+            background-color: $black01;
+            transition: 0.3s ease-in;
+            color: $white01;
+        }
+    }
+    .mainView{
+        transition: 0.8s ease-in;
+        padding: 50px 80px;
+        text-align: center;
+        // display: none;
+        .wrapper{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+    
+            .groupFS{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                .lBox{
-                    margin: 8px 0;
-                    height: 70px;
-                    width: 70px;
-                    border: 2px solid $white01;
+                justify-content: center;
+                width: 100%;
+                .tBox{
+                    margin: 0 20px;
+                    height: 80px;
+                    width: 80px;
+                    border: 3px solid $white01;
                     border-radius: 50%;
                     background: $back ;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 3px;
-                    font-size: 1.1rem;
                     .outputNums{
-                        font-size: 1.6rem;
+                        font-size: 1.8rem;
                         text-shadow: 0 0 7px black;
                         box-shadow: 0 0 15px white;
                         background-color: rgba(255, 255, 255, 0.35);
-                        height: 35px;
-                        width: 35px;
-                        padding: 2px;
+                        height: 40px;
+                        width: 40px;
+                        padding: 3px;
                         border-radius: 50%;
                     }
                 }
-                .amount{
-                    color: rgba(0, 0, 0, 0.297);
-                    transition: ease-in 0.4s;
-                    padding: 15px;
-                    font-size: 1.5rem;
-                    margin: auto 0;
+            }
+    
+            .asideSix{
+                flex-direction: column;
+                .boxWrapper{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .lBox{
+                        margin: 8px 0;
+                        height: 70px;
+                        width: 70px;
+                        border: 2px solid $white01;
+                        border-radius: 50%;
+                        background: $back ;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 3px;
+                        font-size: 0.8rem;
+                        .outputNums{
+                            font-size: 1.6rem;
+                            text-shadow: 0 0 7px black;
+                            box-shadow: 0 0 15px white;
+                            background-color: rgba(255, 255, 255, 0.35);
+                            height: 35px;
+                            width: 35px;
+                            padding: 2px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .amount{
+                        color: rgba(0, 0, 0, 0.297);
+                        transition: ease-in 0.4s;
+                        padding: 15px;
+                        font-size: 1.3rem;
+                        margin: auto 0;
+                    }
                 }
             }
-        }
-    
-        .centralView{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: column;
-            .centralBox{
-                margin: 60px 0;
+        
+            .centralView{
                 display: flex;
-                justify-content: center;
-                padding: 0 100px;
-                .cBox{
-                    height: 320px;
-                    width: 320px;
-                    border: 5px solid $white01;
-                    border-radius: 50%;
-                    font-size: 5rem;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                .centralBox{
+                    margin: 60px 0;
                     display: flex;
                     justify-content: center;
-                    align-items: center;     
-                }
-                .time{
-                    padding: 5px;
-                }
-                .showNums{
-                    text-shadow: 0 0 7px black;
-                    box-shadow: 0 0 15px white;
-                    background-color: rgba(255, 255, 255, 0.35);
-                    height: 150px;
-                    width: 150px;
-                    border-radius: 50%;
-                    padding: 15px;
-                }
-            }
-            .bottomBox{
-                display: flex;
-                justify-content: space-around;
-                .groupB{ 
-                    padding: 0 65px;
-                    align-items: flex-end;                  
-                    .boxWrapper{
+                    padding: 0 100px;
+                    .cBox{
+                        height: 320px;
+                        width: 320px;
+                        border: 5px solid $white01;
+                        border-radius: 50%;
+                        font-size: 5rem;
                         display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        .bBox{
-                            margin: 10px 0;
-                            height: 70px;
-                            width: 70px;
-                            border: 2px solid $white01;
-                            border-radius: 50%;
-                            background: $back ;
+                        justify-content: center;
+                        align-items: center;     
+                    }
+                    .time{
+                        padding: 5px;
+                    }
+                    .showNums{
+                        text-shadow: 0 0 7px black;
+                        box-shadow: 0 0 15px white;
+                        background-color: rgba(255, 255, 255, 0.35);
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 50%;
+                        padding: 15px;
+                    }
+                }
+                .bottomBox{
+                    display: flex;
+                    justify-content: space-around;
+                    .groupB{ 
+                        padding: 0 45px;
+                        align-items: flex-end;                  
+                        .boxWrapper{
                             display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            padding: 3px;
-                            font-size: 1.1rem;
-                            .outputNums{
-                                font-size: 1.6rem;
-                                text-shadow: 0 0 7px black;
-                                box-shadow: 0 0 15px white;
-                                background-color: rgba(255, 255, 255, 0.35);
-                                height: 35px;
-                                width: 35px;
-                                padding: 2px;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            .bBox{
+                                margin: 10px 0;
+                                height: 70px;
+                                width: 70px;
+                                border: 2px solid $white01;
                                 border-radius: 50%;
+                                background: $back ;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 3px;
+                                font-size: 1.1rem;
+                                .outputNums{
+                                    font-size: 1.6rem;
+                                    text-shadow: 0 0 7px black;
+                                    box-shadow: 0 0 15px white;
+                                    background-color: rgba(255, 255, 255, 0.35);
+                                    height: 35px;
+                                    width: 35px;
+                                    padding: 2px;
+                                    border-radius: 50%;
+                                }
                             }
-                        }
-                        .amount{
-                            color: rgba(0, 0, 0, 0.297);
-                            transition: ease-in 0.4s;
-                            padding: 15px;
-                            font-size: 1.5rem;
-                            margin: auto 0;
+                            .amount{
+                                color: rgba(0, 0, 0, 0.297);
+                                transition: ease-in 0.4s;
+                                padding: 15px;
+                                font-size: 1.3rem;
+                                margin: auto 0;
+                            }
                         }
                     }
                 }
             }
+            
         }
         
     }
     
+    .showResults{
+        transition: 0.8s ease-in;
+        user-select: none;
+        width: 80%;
+        background-color: $backResults;
+        margin: 30px auto;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        letter-spacing: 0.1rem;
+        display: none;
+        .roundInfo{
+            width: 100%;
+            h2{
+                padding: 10px;
+            }
+            hr{
+                background-color: yellowgreen;
+                border: 2px solid black;
+            }
+        }
+        .showNumbersResult{
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            .redBalls{
+                .redDot{
+                    @include dots(red);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(red);
+                }
+            }
+            .greenBalls{
+                .greenDot{
+                    @include dots(green);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(green);
+                }
+            }
+            .blueBalls{
+                .blueDot{
+                    @include dots(blue);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(blue);
+                }
+            }
+            .purpleBalls{
+                .purpleDot{
+                    @include dots(purple);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(purple);
+                }
+            }
+            .brownBalls{
+                .brownDot{
+                    @include dots(brown);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(brown);
+                }
+            }
+            .yellowBalls{
+                .yellowDot{
+                    @include dots(yellow);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(yellow);
+                }
+            }
+            .orangeBalls{
+                .orangeDot{
+                    @include dots(orange);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(orange);
+                }
+            }
+            .blackBalls{
+                .blackDot{
+                    @include dots(black);
+                }
+                .boxResult{
+                    @include box-results;
+                }
+                .activeNumResult{
+                    @include activiti-result(black);
+                }
+            }
+    
+        }
+        .showMoreInfo{
+            margin: 50px 0px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            span{
+                color: yellowgreen;
+            }
+            .firstBalls{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                h2{
+                    width: 100%;
+                }
+
+                .firstFive{
+                    @include box-results;
+                    @include activiti-result(yellowgreen);
+                }
+            }
+            .cloverBalls{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                h2{
+                    width: 100%;
+                }
+                .clover{
+                    @include box-results;
+                    @include activiti-result(yellowgreen);
+                }
+            }
+        }
+    }
 }
 
+
 footer{
-    @extend header;
+    background: $black01;
+    color: $white01;
+    display: flex;
     width: 100%;
     border-bottom: none;
     border-top: 2px solid $white01;

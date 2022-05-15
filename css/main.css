@@ -18,9 +18,10 @@ body {
 
 main {
   background: #0f51f6;
+  padding-bottom: 30px;
 }
 
-header, footer {
+main header {
   background: #080808;
   color: whitesmoke;
   display: -webkit-box;
@@ -32,17 +33,33 @@ header, footer {
   border-bottom: 2px solid whitesmoke;
 }
 
-header h2, footer h2, header h1, footer h1 {
+main header h2, main header h1 {
   width: 20%;
   text-align: center;
 }
 
-.mainView {
+main header .startBtn {
+  padding: 15px 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid whitesmoke;
+}
+
+main header .startBtn:hover {
+  background-color: #080808;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  color: whitesmoke;
+}
+
+main .mainView {
+  -webkit-transition: 0.8s ease-in;
+  transition: 0.8s ease-in;
   padding: 50px 80px;
   text-align: center;
 }
 
-.mainView .wrapper {
+main .mainView .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +69,7 @@ header h2, footer h2, header h1, footer h1 {
       flex-wrap: wrap;
 }
 
-.mainView .wrapper .groupFS {
+main .mainView .wrapper .groupFS {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,7 +83,7 @@ header h2, footer h2, header h1, footer h1 {
   width: 100%;
 }
 
-.mainView .wrapper .groupFS .tBox {
+main .mainView .wrapper .groupFS .tBox {
   margin: 0 20px;
   height: 80px;
   width: 80px;
@@ -85,7 +102,7 @@ header h2, footer h2, header h1, footer h1 {
           justify-content: center;
 }
 
-.mainView .wrapper .groupFS .tBox .outputNums {
+main .mainView .wrapper .groupFS .tBox .outputNums {
   font-size: 1.8rem;
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
@@ -97,14 +114,14 @@ header h2, footer h2, header h1, footer h1 {
   border-radius: 50%;
 }
 
-.mainView .wrapper .asideSix {
+main .mainView .wrapper .asideSix {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.mainView .wrapper .asideSix .boxWrapper {
+main .mainView .wrapper .asideSix .boxWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,7 +134,7 @@ header h2, footer h2, header h1, footer h1 {
           justify-content: space-between;
 }
 
-.mainView .wrapper .asideSix .boxWrapper .lBox {
+main .mainView .wrapper .asideSix .boxWrapper .lBox {
   margin: 8px 0;
   height: 70px;
   width: 70px;
@@ -135,10 +152,10 @@ header h2, footer h2, header h1, footer h1 {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 3px;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 
-.mainView .wrapper .asideSix .boxWrapper .lBox .outputNums {
+main .mainView .wrapper .asideSix .boxWrapper .lBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
@@ -150,16 +167,16 @@ header h2, footer h2, header h1, footer h1 {
   border-radius: 50%;
 }
 
-.mainView .wrapper .asideSix .boxWrapper .amount {
+main .mainView .wrapper .asideSix .boxWrapper .amount {
   color: rgba(0, 0, 0, 0.297);
   -webkit-transition: ease-in 0.4s;
   transition: ease-in 0.4s;
   padding: 15px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: auto 0;
 }
 
-.mainView .wrapper .centralView {
+main .mainView .wrapper .centralView {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,7 +192,7 @@ header h2, footer h2, header h1, footer h1 {
           flex-direction: column;
 }
 
-.mainView .wrapper .centralView .centralBox {
+main .mainView .wrapper .centralView .centralBox {
   margin: 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,7 +203,7 @@ header h2, footer h2, header h1, footer h1 {
   padding: 0 100px;
 }
 
-.mainView .wrapper .centralView .centralBox .cBox {
+main .mainView .wrapper .centralView .centralBox .cBox {
   height: 320px;
   width: 320px;
   border: 5px solid whitesmoke;
@@ -203,11 +220,11 @@ header h2, footer h2, header h1, footer h1 {
           align-items: center;
 }
 
-.mainView .wrapper .centralView .centralBox .time {
+main .mainView .wrapper .centralView .centralBox .time {
   padding: 5px;
 }
 
-.mainView .wrapper .centralView .centralBox .showNums {
+main .mainView .wrapper .centralView .centralBox .showNums {
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
           box-shadow: 0 0 15px white;
@@ -218,7 +235,7 @@ header h2, footer h2, header h1, footer h1 {
   padding: 15px;
 }
 
-.mainView .wrapper .centralView .bottomBox {
+main .mainView .wrapper .centralView .bottomBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,14 +243,14 @@ header h2, footer h2, header h1, footer h1 {
       justify-content: space-around;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB {
-  padding: 0 65px;
+main .mainView .wrapper .centralView .bottomBox .groupB {
+  padding: 0 45px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper {
+main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,7 +263,7 @@ header h2, footer h2, header h1, footer h1 {
           justify-content: space-between;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox {
+main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox {
   margin: 10px 0;
   height: 70px;
   width: 70px;
@@ -267,7 +284,7 @@ header h2, footer h2, header h1, footer h1 {
   font-size: 1.1rem;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox .outputNums {
+main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
   -webkit-box-shadow: 0 0 15px white;
@@ -279,16 +296,434 @@ header h2, footer h2, header h1, footer h1 {
   border-radius: 50%;
 }
 
-.mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .amount {
+main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .amount {
   color: rgba(0, 0, 0, 0.297);
   -webkit-transition: ease-in 0.4s;
   transition: ease-in 0.4s;
   padding: 15px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: auto 0;
 }
 
+main .showResults {
+  -webkit-transition: 0.8s ease-in;
+  transition: 0.8s ease-in;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 80%;
+  background-color: #222c36;
+  margin: 30px auto;
+  padding: 40px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  letter-spacing: 0.1rem;
+  display: none;
+}
+
+main .showResults .roundInfo {
+  width: 100%;
+}
+
+main .showResults .roundInfo h2 {
+  padding: 10px;
+}
+
+main .showResults .roundInfo hr {
+  background-color: yellowgreen;
+  border: 2px solid black;
+}
+
+main .showResults .showNumbersResult {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .showResults .showNumbersResult .redBalls .redDot {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .redBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .redBalls .activeNumResult {
+  border: 3px solid red;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .greenBalls .greenDot {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .greenBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .greenBalls .activeNumResult {
+  border: 3px solid green;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .blueBalls .blueDot {
+  height: 20px;
+  width: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .blueBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .blueBalls .activeNumResult {
+  border: 3px solid blue;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .purpleBalls .purpleDot {
+  height: 20px;
+  width: 20px;
+  background-color: purple;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .purpleBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .purpleBalls .activeNumResult {
+  border: 3px solid purple;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .brownBalls .brownDot {
+  height: 20px;
+  width: 20px;
+  background-color: brown;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .brownBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .brownBalls .activeNumResult {
+  border: 3px solid brown;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .yellowBalls .yellowDot {
+  height: 20px;
+  width: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .yellowBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .yellowBalls .activeNumResult {
+  border: 3px solid yellow;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .orangeBalls .orangeDot {
+  height: 20px;
+  width: 20px;
+  background-color: orange;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .orangeBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .orangeBalls .activeNumResult {
+  border: 3px solid orange;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showNumbersResult .blackBalls .blackDot {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+
+main .showResults .showNumbersResult .blackBalls .boxResult {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+
+main .showResults .showNumbersResult .blackBalls .activeNumResult {
+  border: 3px solid black;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showMoreInfo {
+  margin: 50px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .showResults .showMoreInfo span {
+  color: yellowgreen;
+}
+
+main .showResults .showMoreInfo .firstBalls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .showResults .showMoreInfo .firstBalls h2 {
+  width: 100%;
+}
+
+main .showResults .showMoreInfo .firstBalls .firstFive {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+  border: 3px solid yellowgreen;
+  color: white;
+  background-color: #474646;
+}
+
+main .showResults .showMoreInfo .cloverBalls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .showResults .showMoreInfo .cloverBalls h2 {
+  width: 100%;
+}
+
+main .showResults .showMoreInfo .cloverBalls .clover {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+  border: 3px solid yellowgreen;
+  color: white;
+  background-color: #474646;
+}
+
 footer {
+  background: #080808;
+  color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   border-bottom: none;
   border-top: 2px solid whitesmoke;

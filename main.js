@@ -3,27 +3,64 @@ let topBoxes = document.querySelectorAll('.tBox');
 let allBoxes = document.querySelectorAll('.allBox');
 let roundNum = document.querySelector('.roundNumber');
 let amount = document.querySelectorAll('.amount');
+let startBtn = document.querySelector('.startBtn');
+let firstFive = document.querySelectorAll('.firstFive');
+let evenOrOdds = document.querySelector('.evenOrOdds');
+let sumNum = document.querySelector('.sumNum');
+let boxResult = document.querySelectorAll('.boxResult');
+let mainView = document.querySelector('.mainView');
+let showResultsView = document.querySelector('.showResults');
+let resultRound = document.querySelector('.resultRound');
+
+// startBtn.addEventListener('click', nextRound);
 
 let round = 69;
 let mins = 0;
-let sec = 2;
+let sec = 0;
 let nums = [];
 let numsShuffle = [];
 let randomNum;
+let infoResult = {};
 
+let reds = [];
 
+nextRound();
 
-stratTime();
+function nextRound(){
+    resetGame();
+}
 
-function stratTime(){
+function resetGame(){
+    timer.style.background = "none";
+    round++;
+    mins = 0;
+    sec = 25;
+    roundNum.innerHTML = round;
+    for (let i = 0; i < allBoxes.length; i++) {
+        let boxChild = allBoxes[i].querySelector('h1');
+        if (boxChild){
+            allBoxes[i].removeChild(boxChild);
+        }
+        if(allBoxes[i].children.length){
+            allBoxes[i].children[0].style.display = "block";
+        }
+        allBoxes[i].style.background = "rgba(20, 19, 19, 0.5)";
+    }
+    nums = [];
+    numsShuffle = [];
+    startTime();
+}
+
+function startTime(){
     let loop = setInterval(() => {
-        timer.innerHTML = `<h1 class="timer">0${mins} : ${sec}</h1>`;
+        timer.innerHTML = `<h1 class="time">0${mins} : ${sec}</h1>`;
         if(sec === 0 && mins >= 0){
             if(sec === 0 && mins === 0){
                 clearInterval(loop);
                 roundNum.innerHTML = round;
                 timer.innerHTML =  `<h1 class="time"> READY ? </h1>`;
                 timer.style.background = "yellowgreen";
+
                 createNums();
             }else{
                 mins--;
@@ -32,10 +69,10 @@ function stratTime(){
                 sec--;
             }
         }else{
-            sec--;
-            if(sec < 9){
+            if(sec < 10){
                 timer.innerHTML = `<h1 class="time">0${mins} : 0${sec}</h1>`;
             }
+            sec--;
         }    
     }, 1000);
 }
@@ -60,12 +97,17 @@ function getRandomNums(){
 function displayWinNums(){
     console.log(numsShuffle);
 
+
+
     let counter = 0;
     let loop = setInterval(() => {
         if(counter === numsShuffle.length){
             clearInterval(loop);
             timer.style.background = "yellowgreen";
-            timer.innerHTML =  `<h1 class="time"> Results </h1>`;
+            timer.innerHTML = "";
+            showResults();
+            // resetGame();
+            resetAmountColor();
         }else{
 
             switch (numsShuffle[counter]) {
@@ -179,10 +221,71 @@ function displayWinNums(){
             timer.innerHTML =  `<h1 class="showNums animate__animated animate__tada"> ${numsShuffle[counter]} </h1>`;
             allBoxes[counter].innerHTML = `<h1 class="outputNums"> ${numsShuffle[counter]} </h1>`;
 
-
+            // radi mi ali trebo bi naci bolji nacin da ne opterecivam kod sa ovom foreach petljom
+            boxResult.forEach(number => {
+                if (number.innerHTML == numsShuffle[counter]) {
+                    number.classList.add("activeNumResult");
+                }
+            });
         
             counter++;
+
         }
         
-    }, 1500);
+    }, 2500);
+
+}
+
+function showResults(){
+    mainView.style.display = "none";
+    showResultsView.style.display = "flex";
+    resultRound.innerHTML = round;
+    let allFirstFive = [];
+    let sumFirstFive = 0;
+    let even = [];
+    let odds = [];
+
+    for (let i = 0; i < 5; i++) {
+        firstFive[i].innerHTML = numsShuffle[i];
+        allFirstFive.push(numsShuffle[i]);
+    }
+
+    for (let i = 0; i < allFirstFive.length; i++) {
+        if (allFirstFive[i] % 2 === 0) {
+            even.push(allFirstFive[i]);
+        }else{
+            odds.push(allFirstFive[i]);
+        }
+        sumFirstFive += allFirstFive[i];
+    }
+    if (sumFirstFive <= 122) {
+        sumNum.innerHTML = sumFirstFive + " UNDER";
+    }else{
+        sumNum.innerHTML = sumFirstFive + " OVER";
+    }
+    if (even.length > odds.length) {
+        evenOrOdds.innerHTML = "EVEN";
+    }else{
+        evenOrOdds.innerHTML = "ODDS";
+    }
+    // tribam rijesit opciju za opciju koja nosi duple kuglice
+    // za dodavanje aktivnih boja na rezultate mi se nalazi u funkciji displayWins
+
+    setTimeout(restartResults, 15000);
+
+}
+
+function restartResults(){
+    boxResult.forEach(number => {
+        number.classList.remove("activeNumResult");
+    });
+    mainView.style.display = "block";
+    showResultsView.style.display = "none";
+    resetGame();
+}
+
+function resetAmountColor(){
+    for (let i = 0; i < amount.length; i++) {
+        amount[i].style.color = "rgba(0, 0, 0, 0.297)";
+    }
 }
