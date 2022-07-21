@@ -5,6 +5,7 @@ $black01: rgb(8, 8, 8);
 $white01: whitesmoke;
 $back: linear-gradient(rgba(20, 19, 19, 0.5));
 $backResults: #222c36;
+$backUserSelect: #222c36;
 $backNums: #15191c;
 
 // MIXIN
@@ -235,7 +236,134 @@ main{
         }
         
     }
-    
+
+    // User interface 
+
+    .userInterface{
+        width: 90%;
+        background-color: $backUserSelect;
+        margin: 30px auto;
+        padding: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        letter-spacing: 0.1rem;
+        .userRoundInfo{
+            width: 100%;
+            h2{
+                padding: 10px;
+            }
+            hr{
+                background-color: yellowgreen;
+                border: 2px solid red;
+            }
+        }
+        .user-selectNums{
+            margin-top: 25px;
+            display: flex;
+            width: 60%;
+            justify-content: space-between;
+            .user-redBalls{
+                .user-redDot{
+                    cursor: pointer;
+                    @include dots(red);
+                }
+                .user-boxRed{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(red);
+                }
+            }
+            .user-greenBalls{
+                .user-greenDot{
+                    cursor: pointer;
+                    @include dots(green);
+                }
+                .user-boxGreen{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(green);
+                }
+            }
+            .user-blueBalls{
+                .user-blueDot{
+                    cursor: pointer;
+                    @include dots(blue);
+                }
+                .user-boxBlue{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(blue);
+                }
+            }
+            .user-purpleBalls{
+                .user-purpleDot{
+                    cursor: pointer;
+                    @include dots(purple);
+                }
+                .user-boxPurple{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(purple);
+                }
+            }
+            .user-brownBalls{
+                .user-brownDot{
+                    cursor: pointer;
+                    @include dots(brown);
+                }
+                .user-boxBrown{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(brown);
+                }
+            }
+            .user-yellowBalls{
+                .user-yellowDot{
+                    cursor: pointer;
+                    @include dots(yellow);
+                }
+                .user-boxYellow{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(yellow);
+                }
+            }
+            .user-orangeBalls{
+                .user-orangeDot{
+                    cursor: pointer;
+                    @include dots(orange);
+                }
+                .user-boxOrange{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(orange);
+                }
+            }
+            .user-blackBalls{
+                .user-blackDot{
+                    cursor: pointer;
+                    @include dots(black);
+                }
+                .user-boxBlack{
+                    @include box-results;
+                }
+                .user-activeNumResult{
+                    @include activiti-result(black);
+                }
+            }
+        }
+    }
+
+    // show result
     .showResults{
         transition: 0.8s ease-in;
         user-select: none;

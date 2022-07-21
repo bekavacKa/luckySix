@@ -2,8 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,338 +19,445 @@ main {
   background: #0f51f6;
   padding-bottom: 30px;
 }
-
 main header {
-  background: #080808;
+  background: rgb(8, 8, 8);
   color: whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   padding: 30px 0;
   border-bottom: 2px solid whitesmoke;
 }
-
 main header h2, main header h1 {
   width: 20%;
   text-align: center;
 }
-
 main header .startBtn {
   padding: 15px 30px;
   border-radius: 15px;
   cursor: pointer;
   border: 2px solid whitesmoke;
 }
-
 main header .startBtn:hover {
-  background-color: #080808;
-  -webkit-transition: 0.3s ease-in;
+  background-color: rgb(8, 8, 8);
   transition: 0.3s ease-in;
   color: whitesmoke;
 }
-
 main .mainView {
-  -webkit-transition: 0.8s ease-in;
   transition: 0.8s ease-in;
   padding: 50px 80px;
   text-align: center;
 }
-
 main .mainView .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-
 main .mainView .wrapper .groupFS {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
 }
-
 main .mainView .wrapper .groupFS .tBox {
   margin: 0 20px;
   height: 80px;
   width: 80px;
   border: 3px solid whitesmoke;
   border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
   background: linear-gradient(rgba(20, 19, 19, 0.5));
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-
 main .mainView .wrapper .groupFS .tBox .outputNums {
   font-size: 1.8rem;
   text-shadow: 0 0 7px black;
-  -webkit-box-shadow: 0 0 15px white;
-          box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px white;
   background-color: rgba(255, 255, 255, 0.35);
   height: 40px;
   width: 40px;
   padding: 3px;
   border-radius: 50%;
 }
-
 main .mainView .wrapper .asideSix {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 main .mainView .wrapper .asideSix .boxWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
 main .mainView .wrapper .asideSix .boxWrapper .lBox {
   margin: 8px 0;
   height: 70px;
   width: 70px;
   border: 2px solid whitesmoke;
   border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
   background: linear-gradient(rgba(20, 19, 19, 0.5));
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   padding: 3px;
   font-size: 0.8rem;
 }
-
 main .mainView .wrapper .asideSix .boxWrapper .lBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
-  -webkit-box-shadow: 0 0 15px white;
-          box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px white;
   background-color: rgba(255, 255, 255, 0.35);
   height: 35px;
   width: 35px;
   padding: 2px;
   border-radius: 50%;
 }
-
 main .mainView .wrapper .asideSix .boxWrapper .amount {
   color: rgba(0, 0, 0, 0.297);
-  -webkit-transition: ease-in 0.4s;
   transition: ease-in 0.4s;
   padding: 15px;
   font-size: 1.3rem;
   margin: auto 0;
 }
-
 main .mainView .wrapper .centralView {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
-
 main .mainView .wrapper .centralView .centralBox {
   margin: 60px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding: 0 100px;
 }
-
 main .mainView .wrapper .centralView .centralBox .cBox {
   height: 320px;
   width: 320px;
   border: 5px solid whitesmoke;
   border-radius: 50%;
   font-size: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 main .mainView .wrapper .centralView .centralBox .time {
   padding: 5px;
 }
-
 main .mainView .wrapper .centralView .centralBox .showNums {
   text-shadow: 0 0 7px black;
-  -webkit-box-shadow: 0 0 15px white;
-          box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px white;
   background-color: rgba(255, 255, 255, 0.35);
   height: 150px;
   width: 150px;
   border-radius: 50%;
   padding: 15px;
 }
-
 main .mainView .wrapper .centralView .bottomBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 main .mainView .wrapper .centralView .bottomBox .groupB {
   padding: 0 45px;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
-
 main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
 main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox {
   margin: 10px 0;
   height: 70px;
   width: 70px;
   border: 2px solid whitesmoke;
   border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 19, 19, 0.5)));
   background: linear-gradient(rgba(20, 19, 19, 0.5));
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   padding: 3px;
   font-size: 1.1rem;
 }
-
 main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .bBox .outputNums {
   font-size: 1.6rem;
   text-shadow: 0 0 7px black;
-  -webkit-box-shadow: 0 0 15px white;
-          box-shadow: 0 0 15px white;
+  box-shadow: 0 0 15px white;
   background-color: rgba(255, 255, 255, 0.35);
   height: 35px;
   width: 35px;
   padding: 2px;
   border-radius: 50%;
 }
-
 main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .amount {
   color: rgba(0, 0, 0, 0.297);
-  -webkit-transition: ease-in 0.4s;
   transition: ease-in 0.4s;
   padding: 15px;
   font-size: 1.3rem;
   margin: auto 0;
 }
-
+main .userInterface {
+  width: 90%;
+  background-color: #222c36;
+  margin: 30px auto;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  letter-spacing: 0.1rem;
+}
+main .userInterface .userRoundInfo {
+  width: 100%;
+}
+main .userInterface .userRoundInfo h2 {
+  padding: 10px;
+}
+main .userInterface .userRoundInfo hr {
+  background-color: yellowgreen;
+  border: 2px solid red;
+}
+main .userInterface .user-selectNums {
+  margin-top: 25px;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+main .userInterface .user-selectNums .user-redBalls .user-redDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-redBalls .user-boxRed {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-redBalls .user-activeNumResult {
+  border: 3px solid red;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-greenBalls .user-greenDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-greenBalls .user-boxGreen {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-greenBalls .user-activeNumResult {
+  border: 3px solid green;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-blueBalls .user-blueDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-blueBalls .user-boxBlue {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-blueBalls .user-activeNumResult {
+  border: 3px solid blue;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-purpleBalls .user-purpleDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: purple;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-purpleBalls .user-boxPurple {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-purpleBalls .user-activeNumResult {
+  border: 3px solid purple;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-brownBalls .user-brownDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: brown;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-brownBalls .user-boxBrown {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-brownBalls .user-activeNumResult {
+  border: 3px solid brown;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-yellowBalls .user-yellowDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-yellowBalls .user-boxYellow {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-yellowBalls .user-activeNumResult {
+  border: 3px solid yellow;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-orangeBalls .user-orangeDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: orange;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-orangeBalls .user-boxOrange {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-orangeBalls .user-activeNumResult {
+  border: 3px solid orange;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-blackBalls .user-blackDot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px auto;
+}
+main .userInterface .user-selectNums .user-blackBalls .user-boxBlack {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+}
+main .userInterface .user-selectNums .user-blackBalls .user-activeNumResult {
+  border: 3px solid black;
+  color: white;
+  background-color: rgb(71, 70, 70);
+}
 main .showResults {
-  -webkit-transition: 0.8s ease-in;
   transition: 0.8s ease-in;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   width: 80%;
   background-color: #222c36;
   margin: 30px auto;
   padding: 40px;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
   letter-spacing: 0.1rem;
   display: none;
 }
-
 main .showResults .roundInfo {
   width: 100%;
 }
-
 main .showResults .roundInfo h2 {
   padding: 10px;
 }
-
 main .showResults .roundInfo hr {
   background-color: yellowgreen;
   border: 2px solid black;
 }
-
 main .showResults .showNumbersResult {
   margin-top: 25px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 main .showResults .showNumbersResult .redBalls .redDot {
   height: 20px;
   width: 20px;
@@ -359,33 +465,24 @@ main .showResults .showNumbersResult .redBalls .redDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .redBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .redBalls .activeNumResult {
   border: 3px solid red;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .greenBalls .greenDot {
   height: 20px;
   width: 20px;
@@ -393,33 +490,24 @@ main .showResults .showNumbersResult .greenBalls .greenDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .greenBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .greenBalls .activeNumResult {
   border: 3px solid green;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .blueBalls .blueDot {
   height: 20px;
   width: 20px;
@@ -427,33 +515,24 @@ main .showResults .showNumbersResult .blueBalls .blueDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .blueBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .blueBalls .activeNumResult {
   border: 3px solid blue;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .purpleBalls .purpleDot {
   height: 20px;
   width: 20px;
@@ -461,33 +540,24 @@ main .showResults .showNumbersResult .purpleBalls .purpleDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .purpleBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .purpleBalls .activeNumResult {
   border: 3px solid purple;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .brownBalls .brownDot {
   height: 20px;
   width: 20px;
@@ -495,33 +565,24 @@ main .showResults .showNumbersResult .brownBalls .brownDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .brownBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .brownBalls .activeNumResult {
   border: 3px solid brown;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .yellowBalls .yellowDot {
   height: 20px;
   width: 20px;
@@ -529,33 +590,24 @@ main .showResults .showNumbersResult .yellowBalls .yellowDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .yellowBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .yellowBalls .activeNumResult {
   border: 3px solid yellow;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .orangeBalls .orangeDot {
   height: 20px;
   width: 20px;
@@ -563,33 +615,24 @@ main .showResults .showNumbersResult .orangeBalls .orangeDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .orangeBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .orangeBalls .activeNumResult {
   border: 3px solid orange;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showNumbersResult .blackBalls .blackDot {
   height: 20px;
   width: 20px;
@@ -597,152 +640,99 @@ main .showResults .showNumbersResult .blackBalls .blackDot {
   border-radius: 50%;
   margin: 0px auto;
 }
-
 main .showResults .showNumbersResult .blackBalls .boxResult {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
 }
-
 main .showResults .showNumbersResult .blackBalls .activeNumResult {
   border: 3px solid black;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showMoreInfo {
   margin: 50px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: space-between;
+  flex-direction: column;
 }
-
 main .showResults .showMoreInfo span {
   color: yellowgreen;
 }
-
 main .showResults .showMoreInfo .firstBalls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
 main .showResults .showMoreInfo .firstBalls h2 {
   width: 100%;
 }
-
 main .showResults .showMoreInfo .firstBalls .firstFive {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
   border: 3px solid yellowgreen;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
-
 main .showResults .showMoreInfo .cloverBalls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
 main .showResults .showMoreInfo .cloverBalls h2 {
   width: 100%;
 }
-
 main .showResults .showMoreInfo .cloverBalls .clover {
   margin: 20px 10px 0;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 2px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
   border: 3px solid yellowgreen;
   color: white;
-  background-color: #474646;
+  background-color: rgb(71, 70, 70);
 }
 
 footer {
-  background: #080808;
+  background: rgb(8, 8, 8);
   color: whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   border-bottom: none;
   border-top: 2px solid whitesmoke;
   padding: 25px;
   font-size: 1.5rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   letter-spacing: 2px;
 }
-
 footer h4 {
   margin-top: 15px;
   letter-spacing: 2.5px;
 }
+
 /*# sourceMappingURL=main.css.map */
