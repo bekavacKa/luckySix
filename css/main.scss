@@ -247,7 +247,7 @@ main{
     // User interface 
 
     .userInterface{
-        width: 90%;
+        width: 100%;
         background-color: $backUserSelect;
         margin: 30px auto;
         padding: 40px;
@@ -270,7 +270,8 @@ main{
         }
         .user-selectNums{
             display: flex;
-            width: 55%;
+            // width: 55%;
+            // flex: 1;
             justify-content: space-between;
             .user-redBalls{
                 .user-redDot{
@@ -370,7 +371,8 @@ main{
             }
         }
         .user-selectedNums{
-            width: 40%;
+            // width: 40%;
+            // flex: 1;
             background-color: grey;
             display: flex;
             justify-content: space-between;
@@ -457,7 +459,11 @@ main{
                         font-size: 1.3rem;
 
                     }
+                    .acive-winn{
+                        background-color: yellowgreen;
+                    }
                 }
+                
                 .user-stakeSuccess{
                     display: flex;
                     align-self: flex-start;

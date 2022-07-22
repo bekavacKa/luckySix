@@ -72,25 +72,46 @@ let lucky = {};
 // lucky.nums = [];
 // lucky.numsShuffle = [];
 // let randomNum;
+// ****************************
+userTicket = {
+  isSelectedNumsFull: false,
+  selectedNums: [],
+  activTickets: {
+    ticketNo1: {
+      round: 0,
+      activeNums: [],
+      winnNums: [],
+    },
+  },
+};
+
 let infoResult = {};
-let userTicket = {};
-userTicket.isSelectedNumsFull = false;
-userTicket.selectedNums = [];
+// let userTicket = {};
+// userTicket.isSelectedNumsFull = false;
+// userTicket.selectedNums = [];
+// userTicket.activTickets={};
+// userTicket.activTickets.ticketNo1={};
+// userTicket.activTickets.ticketNo1.round = 0;
+// userTicket.activTickets.ticketNo1.activeNums =[];
+// userTicket.activTickets.ticketNo1.winnNums =[];
 
 function selectNumsByColor(color) {
-
   console.log(userTicket);
-  console.log(userTicket.selectedNums.length);
-  console.log(color);
+  // console.log(userTicket.selectedNums.length);
+  // console.log(color);
+  // console.log(userTicket.activTickets.length);
 
   switch (color) {
     case "red":
       for (let i = 0; i < allRedBox.length; i++) {
-        if ((!allRedBox[i].classList.contains("user-activeNumResult")) && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allRedBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allRedBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allRedBox[i].innerHTML))    
-        } else if(allRedBox[i].classList.contains("user-activeNumResult")) {
-          allRedBox[i].classList.remove("user-activeNumResult"); 
+          userTicket.selectedNums.push(parseInt(allRedBox[i].innerHTML));
+        } else if (allRedBox[i].classList.contains("user-activeNumResult")) {
+          allRedBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
         }
       }
@@ -98,9 +119,12 @@ function selectNumsByColor(color) {
 
     case "green":
       for (let i = 0; i < allGreenBox.length; i++) {
-        if ((!allGreenBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allGreenBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allGreenBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allGreenBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allGreenBox[i].innerHTML));
         } else {
           allGreenBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -110,9 +134,12 @@ function selectNumsByColor(color) {
 
     case "blue":
       for (let i = 0; i < allBlueBox.length; i++) {
-        if ((!allBlueBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allBlueBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allBlueBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allBlueBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allBlueBox[i].innerHTML));
         } else {
           allBlueBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -122,9 +149,12 @@ function selectNumsByColor(color) {
 
     case "purple":
       for (let i = 0; i < allPurpleBox.length; i++) {
-        if ((!allPurpleBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allPurpleBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allPurpleBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allPurpleBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allPurpleBox[i].innerHTML));
         } else {
           allPurpleBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -134,9 +164,12 @@ function selectNumsByColor(color) {
 
     case "brown":
       for (let i = 0; i < allBrownBox.length; i++) {
-        if ((!allBrownBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allBrownBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allBrownBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allBrownBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allBrownBox[i].innerHTML));
         } else {
           allBrownBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -146,9 +179,12 @@ function selectNumsByColor(color) {
 
     case "yellow":
       for (let i = 0; i < allYellowBox.length; i++) {
-        if ((!allYellowBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allYellowBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allYellowBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allYellowBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allYellowBox[i].innerHTML));
         } else {
           allYellowBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -158,9 +194,12 @@ function selectNumsByColor(color) {
 
     case "orange":
       for (let i = 0; i < allOrangeBox.length; i++) {
-        if ((!allOrangeBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allOrangeBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allOrangeBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allOrangeBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allOrangeBox[i].innerHTML));
         } else {
           allOrangeBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -170,9 +209,12 @@ function selectNumsByColor(color) {
 
     case "black":
       for (let i = 0; i < allBlackBox.length; i++) {
-        if ((!allBlackBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
+        if (
+          !allBlackBox[i].classList.contains("user-activeNumResult") &&
+          userTicket.isSelectedNumsFull === false
+        ) {
           allBlackBox[i].classList.add("user-activeNumResult");
-          userTicket.selectedNums.push(parseInt(allBlackBox[i].innerHTML))    
+          userTicket.selectedNums.push(parseInt(allBlackBox[i].innerHTML));
         } else {
           allBlackBox[i].classList.remove("user-activeNumResult");
           userTicket.selectedNums = [];
@@ -183,72 +225,95 @@ function selectNumsByColor(color) {
     default:
       break;
   }
-  checkisSelectedNumsFull()
+  checkisSelectedNumsFull();
   // console.log(userTicket.selectedNums.length);
   insertNumsInUserView();
-
 }
 
-function insertNumsInUserView(){
-  console.log(userTicket.selectedNums);
+function insertNumsInUserView() {
+  // console.log(userTicket.selectedNums);
   let boxes = ``;
   if (userTicket.isSelectedNumsFull) {
     userViewTicket.classList.remove("hide");
-    userTicket.selectedNums.forEach((num)=>{
+    userTicket.selectedNums.forEach((num) => {
       boxes += `<div class="user-boxView">${num}</div>`;
-    })
+    });
     // do tu doso ssad moram napravit da uplacen listic pređw dole i spremim ga u uplacene
-  }
-  else{
+  } else {
     userViewTicket.classList.add("hide");
   }
   userViewBalls.innerHTML = boxes;
-};
-
-function confirmTicket(){
-  console.log(confirmBtn);
-  let box = ``.trim()
-  successfulTicketsView.classList.remove("hide");
-  userTicket.selectedNums.forEach((num)=>{
-    box += `<div class="user-boxSuccess">${num}</div>`  
-  })
-  let template= `
-  <div class="user-successBalls">
-  ${box}
-  </div>
-  <div class="user-stakeSuccess">
-  <h3>Stake</h3> <span>1,00</span>
-  </div> 
-  `.trim();
-  successfulTicketsView.innerHTML += template;
+  // console.log(userTicket.selectedNums);
 }
 
+function confirmTicket() {
+  // console.log(confirmBtn);
+  let box = ``.trim();
+  successfulTicketsView.classList.remove("hide");
+  userTicket.selectedNums.forEach((num) => {
+    box += `<div class="user-boxSuccess">${num}</div>`;
+  });
+  let template = `
+    <div class="user-successBalls">
+      ${box}
+    </div>
+      <div class="user-stakeSuccess ">
+      <h3>Stake</h3> <span>1,00</span>
+    </div> 
+  `.trim();
+  successfulTicketsView.innerHTML += template;
+  userViewTicket.classList.add("hide");
 
+  addNumsInUserTicket();
+}
 
-function checkisSelectedNumsFull(){
-  if(userTicket.selectedNums.length === 6){
+function checkisSelectedNumsFull() {
+  if (userTicket.selectedNums.length === 6) {
     userTicket.isSelectedNumsFull = true;
-  }
-  else{
+  } else {
     userTicket.isSelectedNumsFull = false;
     console.log(userTicket.isSelectedNumsFull, "tajj");
     addNumsInUserTicket();
   }
 }
 
-function addNumsInUserTicket(num){
-  // userTicket.selectedNums.push(num);
-  // console.log(num);
-  // console.log(userTicket.selectedNums);
+function addNumsInUserTicket() {
+  userTicket.activTickets.ticketNo1.activeNums = userTicket.selectedNums;
+  userTicket.selectedNums = [];
+  userTicket.isSelectedNumsFull = false;
+  console.log(userTicket, "cili iz addNumsa");
 }
 
 
+// TODO: sam stao 22.07 sad moram provjerit koliko je korisnik dobio, odnosno koji innerHtml je imao kada je bio zdanji push, i tribam napravit da nije push kada pogodim nroj nego da odradim slice
 
-// // check if user ticket is full
-// function userTicketCapacity(){
-
-// }
-
+function checkingWinnNumbers(currWinnNumber) {
+  // console.log(currWinnNumber, "iz funkcije");
+  if (
+    userTicket.activTickets.ticketNo1.activeNums.find(
+      (num) => num === currWinnNumber
+    )
+  ) {
+    let currentNum = 0;
+    currentNum = userTicket.activTickets.ticketNo1.activeNums.find(
+      (num) => num === currWinnNumber
+    );
+    userTicket.activTickets.ticketNo1.winnNums.push(currentNum);
+    if (currentNum > 0) {
+      // console.log(
+      //   "dobitni i veci od 0",
+      //   userTicket.activTickets.ticketNo1.winnNums
+      // );
+      let allActivNums = document.querySelectorAll(".user-boxSuccess");
+      // console.log(allActivNums);
+      allActivNums.forEach((accNum) => {
+        if (parseInt(accNum.innerHTML) === currentNum) {
+          accNum.classList.add("acive-winn");
+        }
+      });
+    }
+  }
+}
 
 // staro
 
@@ -451,6 +516,17 @@ function displayWinNums() {
         counter
       ].innerHTML = `<h1 class="outputNums"> ${lucky.numsShuffle[counter]} </h1>`;
 
+      let currWinnNumber = lucky.numsShuffle[counter];
+      // za provjerit imam li u odabranim brojevima
+      if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
+        checkingWinnNumbers(currWinnNumber);
+        // console.log("odigro");
+      } else {
+        console.log("You have no payments for this round");
+      }
+
+      console.log(lucky.numsShuffle[counter]);
+
       // radi mi ali trebo bi naci bolji nacin da ne opterecivam kod sa ovom foreach petljom
       boxResult.forEach((number) => {
         if (number.innerHTML == lucky.numsShuffle[counter]) {
@@ -460,7 +536,7 @@ function displayWinNums() {
 
       counter++;
     }
-  }, 500);
+  }, 2000);
 }
 
 function showResults() {

@@ -203,7 +203,7 @@ main .mainView .wrapper .centralView .bottomBox .groupB .boxWrapper .amount {
   margin: auto 0;
 }
 main .userInterface {
-  width: 90%;
+  width: 100%;
   background-color: #222c36;
   margin: 30px auto;
   padding: 40px;
@@ -226,7 +226,6 @@ main .userInterface .userRoundInfo hr {
 }
 main .userInterface .user-selectNums {
   display: flex;
-  width: 55%;
   justify-content: space-between;
 }
 main .userInterface .user-selectNums .user-redBalls .user-redDot {
@@ -446,7 +445,6 @@ main .userInterface .user-selectNums .user-blackBalls .user-activeNumResult {
   background-color: rgb(71, 70, 70);
 }
 main .userInterface .user-selectedNums {
-  width: 40%;
   background-color: grey;
   display: flex;
   justify-content: space-between;
@@ -555,6 +553,9 @@ main .userInterface .user-selectedNums .user-successfulTickets .user-successBall
   background-color: gray;
   color: black;
   font-size: 1.3rem;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-successBalls .acive-winn {
+  background-color: yellowgreen;
 }
 main .userInterface .user-selectedNums .user-successfulTickets .user-stakeSuccess {
   display: flex;
