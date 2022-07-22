@@ -15,6 +15,14 @@ body {
   display: none;
 }
 
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
 main {
   background: #0f51f6;
   padding-bottom: 30px;
@@ -207,6 +215,7 @@ main .userInterface {
 }
 main .userInterface .userRoundInfo {
   width: 100%;
+  margin-bottom: 30px;
 }
 main .userInterface .userRoundInfo h2 {
   padding: 10px;
@@ -216,9 +225,8 @@ main .userInterface .userRoundInfo hr {
   border: 2px solid red;
 }
 main .userInterface .user-selectNums {
-  margin-top: 25px;
   display: flex;
-  width: 60%;
+  width: 55%;
   justify-content: space-between;
 }
 main .userInterface .user-selectNums .user-redBalls .user-redDot {
@@ -241,6 +249,7 @@ main .userInterface .user-selectNums .user-redBalls .user-boxRed {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-redBalls .user-activeNumResult {
   border: 3px solid red;
@@ -267,6 +276,7 @@ main .userInterface .user-selectNums .user-greenBalls .user-boxGreen {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-greenBalls .user-activeNumResult {
   border: 3px solid green;
@@ -293,6 +303,7 @@ main .userInterface .user-selectNums .user-blueBalls .user-boxBlue {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-blueBalls .user-activeNumResult {
   border: 3px solid blue;
@@ -319,6 +330,7 @@ main .userInterface .user-selectNums .user-purpleBalls .user-boxPurple {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-purpleBalls .user-activeNumResult {
   border: 3px solid purple;
@@ -345,6 +357,7 @@ main .userInterface .user-selectNums .user-brownBalls .user-boxBrown {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-brownBalls .user-activeNumResult {
   border: 3px solid brown;
@@ -371,6 +384,7 @@ main .userInterface .user-selectNums .user-yellowBalls .user-boxYellow {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-yellowBalls .user-activeNumResult {
   border: 3px solid yellow;
@@ -397,6 +411,7 @@ main .userInterface .user-selectNums .user-orangeBalls .user-boxOrange {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-orangeBalls .user-activeNumResult {
   border: 3px solid orange;
@@ -423,11 +438,138 @@ main .userInterface .user-selectNums .user-blackBalls .user-boxBlack {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .userInterface .user-selectNums .user-blackBalls .user-activeNumResult {
   border: 3px solid black;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectedNums {
+  width: 40%;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+main .userInterface .user-selectedNums .user-viewTickets {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-bottom: 2px solid black;
+}
+main .userInterface .user-selectedNums .user-viewTickets h1 {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-viewBalls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px dashed black;
+  border-top: 1px solid black;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-viewBalls .user-boxView {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+  font-weight: 600;
+  margin: 10px 3px;
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  color: black;
+  font-size: 1.3rem;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-stakeTickets {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 40px;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-stakeTickets h3 {
+  font-weight: 800;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-stakeTickets span {
+  color: #0f51f6;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-stakeTickets .confirmBtn {
+  cursor: pointer;
+  background-color: #0f51f6;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+main .userInterface .user-selectedNums .user-viewTickets .user-stakeTickets .confirmBtn:hover {
+  background-color: green;
+}
+main .userInterface .user-selectedNums .user-successfulTickets {
+  width: 100%;
+  align-self: flex-end;
+  background-color: white;
+  color: black;
+}
+main .userInterface .user-selectedNums .user-successfulTickets h2 {
+  background-color: yellowgreen;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-successBalls {
+  border-top: 2px solid black;
+  border-bottom: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-successBalls .user-boxSuccess {
+  margin: 20px 10px 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #15191c;
+  color: gray;
+  font-weight: 600;
+  margin: 10px 3px;
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  color: black;
+  font-size: 1.3rem;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-stakeSuccess {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 40px;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-stakeSuccess h3 {
+  font-weight: 800;
+}
+main .userInterface .user-selectedNums .user-successfulTickets .user-stakeSuccess span {
+  color: #0f51f6;
+  font-weight: 900;
+  font-size: 1.3rem;
 }
 main .showResults {
   transition: 0.8s ease-in;
@@ -477,6 +619,7 @@ main .showResults .showNumbersResult .redBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .redBalls .activeNumResult {
   border: 3px solid red;
@@ -502,6 +645,7 @@ main .showResults .showNumbersResult .greenBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .greenBalls .activeNumResult {
   border: 3px solid green;
@@ -527,6 +671,7 @@ main .showResults .showNumbersResult .blueBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .blueBalls .activeNumResult {
   border: 3px solid blue;
@@ -552,6 +697,7 @@ main .showResults .showNumbersResult .purpleBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .purpleBalls .activeNumResult {
   border: 3px solid purple;
@@ -577,6 +723,7 @@ main .showResults .showNumbersResult .brownBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .brownBalls .activeNumResult {
   border: 3px solid brown;
@@ -602,6 +749,7 @@ main .showResults .showNumbersResult .yellowBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .yellowBalls .activeNumResult {
   border: 3px solid yellow;
@@ -627,6 +775,7 @@ main .showResults .showNumbersResult .orangeBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .orangeBalls .activeNumResult {
   border: 3px solid orange;
@@ -652,6 +801,7 @@ main .showResults .showNumbersResult .blackBalls .boxResult {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
 }
 main .showResults .showNumbersResult .blackBalls .activeNumResult {
   border: 3px solid black;
@@ -687,6 +837,7 @@ main .showResults .showMoreInfo .firstBalls .firstFive {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
   border: 3px solid yellowgreen;
   color: white;
   background-color: rgb(71, 70, 70);
@@ -711,6 +862,7 @@ main .showResults .showMoreInfo .cloverBalls .clover {
   font-size: 1.5rem;
   background-color: #15191c;
   color: gray;
+  font-weight: 600;
   border: 3px solid yellowgreen;
   color: white;
   background-color: rgb(71, 70, 70);

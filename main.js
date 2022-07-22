@@ -57,6 +57,14 @@ let allYellowBox = document.querySelectorAll(".user-boxYellow");
 let allOrangeBox = document.querySelectorAll(".user-boxOrange");
 let allBlackBox = document.querySelectorAll(".user-boxBlack");
 
+// selectors for right user view
+let userViewTicket = document.querySelector(".user-viewTickets");
+let userViewBalls = document.querySelector(".user-viewBalls");
+let confirmBtn = document.querySelector(".confirmBtn");
+confirmBtn.addEventListener("click", confirmTicket);
+let successfulTicketsView = document.querySelector(".user-successfulTickets");
+let successBallsView = document.querySelector(".user-successBalls");
+
 let round = 69;
 let mins = 0;
 let sec = 0;
@@ -80,9 +88,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allRedBox.length; i++) {
         if ((!allRedBox[i].classList.contains("user-activeNumResult")) && (userTicket.isSelectedNumsFull === false)) {
           allRedBox[i].classList.add("user-activeNumResult");
-          addNumsInUserTicket(i);
-        } else {
-          allRedBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allRedBox[i].innerHTML))    
+        } else if(allRedBox[i].classList.contains("user-activeNumResult")) {
+          allRedBox[i].classList.remove("user-activeNumResult"); 
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -91,8 +100,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allGreenBox.length; i++) {
         if ((!allGreenBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allGreenBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allGreenBox[i].innerHTML))    
         } else {
           allGreenBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -101,8 +112,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allBlueBox.length; i++) {
         if ((!allBlueBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allBlueBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allBlueBox[i].innerHTML))    
         } else {
           allBlueBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -111,8 +124,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allPurpleBox.length; i++) {
         if ((!allPurpleBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allPurpleBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allPurpleBox[i].innerHTML))    
         } else {
           allPurpleBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -121,8 +136,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allBrownBox.length; i++) {
         if ((!allBrownBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allBrownBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allBrownBox[i].innerHTML))    
         } else {
           allBrownBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -131,8 +148,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allYellowBox.length; i++) {
         if ((!allYellowBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allYellowBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allYellowBox[i].innerHTML))    
         } else {
           allYellowBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -141,8 +160,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allOrangeBox.length; i++) {
         if ((!allOrangeBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allOrangeBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allOrangeBox[i].innerHTML))    
         } else {
           allOrangeBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -151,8 +172,10 @@ function selectNumsByColor(color) {
       for (let i = 0; i < allBlackBox.length; i++) {
         if ((!allBlackBox[i].classList.contains("user-activeNumResult"))  && (userTicket.isSelectedNumsFull === false)) {
           allBlackBox[i].classList.add("user-activeNumResult");
+          userTicket.selectedNums.push(parseInt(allBlackBox[i].innerHTML))    
         } else {
           allBlackBox[i].classList.remove("user-activeNumResult");
+          userTicket.selectedNums = [];
         }
       }
       break;
@@ -161,22 +184,62 @@ function selectNumsByColor(color) {
       break;
   }
   checkisSelectedNumsFull()
+  // console.log(userTicket.selectedNums.length);
+  insertNumsInUserView();
 
-  // console.log(userTicket.selectedNums);
 }
 
+function insertNumsInUserView(){
+  console.log(userTicket.selectedNums);
+  let boxes = ``;
+  if (userTicket.isSelectedNumsFull) {
+    userViewTicket.classList.remove("hide");
+    userTicket.selectedNums.forEach((num)=>{
+      boxes += `<div class="user-boxView">${num}</div>`;
+    })
+    // do tu doso ssad moram napravit da uplacen listic pređw dole i spremim ga u uplacene
+  }
+  else{
+    userViewTicket.classList.add("hide");
+  }
+  userViewBalls.innerHTML = boxes;
+};
+
+function confirmTicket(){
+  console.log(confirmBtn);
+  let box = ``.trim()
+  successfulTicketsView.classList.remove("hide");
+  userTicket.selectedNums.forEach((num)=>{
+    box += `<div class="user-boxSuccess">${num}</div>`  
+  })
+  let template= `
+  <div class="user-successBalls">
+  ${box}
+  </div>
+  <div class="user-stakeSuccess">
+  <h3>Stake</h3> <span>1,00</span>
+  </div> 
+  `.trim();
+  successfulTicketsView.innerHTML += template;
+}
+
+
+
 function checkisSelectedNumsFull(){
-  if(userTicket.selectedNums.length >= 6){
+  if(userTicket.selectedNums.length === 6){
     userTicket.isSelectedNumsFull = true;
   }
   else{
+    userTicket.isSelectedNumsFull = false;
     console.log(userTicket.isSelectedNumsFull, "tajj");
     addNumsInUserTicket();
   }
 }
 
-function addNumsInUserTicket(i){
-  userTicket.selectedNums.push(parseInt(allRedBox[i].innerHTML));
+function addNumsInUserTicket(num){
+  // userTicket.selectedNums.push(num);
+  // console.log(num);
+  // console.log(userTicket.selectedNums);
 }
 
 

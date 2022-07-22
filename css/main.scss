@@ -22,6 +22,7 @@ $backNums: #15191c;
     font-size: 1.5rem;
     background-color: $backNums;
     color: gray;
+    font-weight: 600;
 }
 @mixin activiti-result($color){
     border: 3px solid $color;
@@ -48,6 +49,12 @@ body{
     font-size: 16px;
 }
 ::-webkit-scrollbar{
+    display: none;
+}
+.show{
+    display: flex;
+}
+.hide{
     display: none;
 }
 
@@ -251,6 +258,8 @@ main{
         letter-spacing: 0.1rem;
         .userRoundInfo{
             width: 100%;
+            margin-bottom: 30px;
+
             h2{
                 padding: 10px;
             }
@@ -260,9 +269,8 @@ main{
             }
         }
         .user-selectNums{
-            margin-top: 25px;
             display: flex;
-            width: 60%;
+            width: 55%;
             justify-content: space-between;
             .user-redBalls{
                 .user-redDot{
@@ -358,6 +366,112 @@ main{
                 }
                 .user-activeNumResult{
                     @include activiti-result(black);
+                }
+            }
+        }
+        .user-selectedNums{
+            width: 40%;
+            background-color: grey;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            text-transform: uppercase;
+            .user-viewTickets{
+                width: 100%;
+                background-color: white;
+                color: black;
+                border-bottom: 2px solid black;
+                h1{
+                    font-size: 1.3rem;
+                    font-weight: 900;
+                }
+                .user-viewBalls{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    border-bottom: 1px dashed black;
+                    border-top: 1px solid black; 
+                    .user-boxView{
+                        @include box-results;
+                        margin: 10px 3px;
+                        height: 40px;
+                        width: 40px;
+                        background-color: gray;
+                        color: black;
+                        font-size: 1.3rem;
+
+                    }
+                }
+                .user-stakeTickets{
+                    display: flex;
+                    align-self: flex-start;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 3px 40px;
+                    h3{
+                        font-weight: 800;
+                    }
+                    span{
+                        color: $blue01;
+                        font-weight: 900 ;
+                        font-size: 1.3rem;
+                    }
+                    .confirmBtn{
+                        cursor: pointer;
+                        background-color: $blue01;
+                        padding: 3px 10px;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        border: none;
+                        color: white;
+                        font-weight: 600;
+                        &:hover{
+                            background-color: green;
+                        }
+                    }
+                }
+            }
+            .user-successfulTickets{
+                width: 100%;
+                align-self: flex-end;
+                background-color: white;
+                color: black;
+                h2{
+                    background-color: yellowgreen;
+                }
+                .user-successBalls{
+                    border-top: 2px solid black;
+                    border-bottom: 1px dashed black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    .user-boxSuccess{
+                        @include box-results;
+                        margin: 10px 3px;
+                        height: 40px;
+                        width: 40px;
+                        background-color: gray;
+                        color: black;
+                        font-size: 1.3rem;
+
+                    }
+                }
+                .user-stakeSuccess{
+                    display: flex;
+                    align-self: flex-start;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 3px 40px;
+                    h3{
+                        font-weight: 800;
+                    }
+                    span{
+                        color: $blue01;
+                        font-weight: 900 ;
+                        font-size: 1.3rem;
+                    }
                 }
             }
         }
