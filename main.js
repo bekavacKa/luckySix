@@ -15,38 +15,40 @@ let resultRound = document.querySelector(".resultRound");
 // select user interface
 // dots for all nums with same color selecet
 let selectRedDot = document.querySelector(".user-redDot");
-selectRedDot.addEventListener("click", () => {
-  selectNumsByColor("red");
-});
 let selectGreenDot = document.querySelector(".user-greenDot");
-selectGreenDot.addEventListener("click", () => {
-  selectNumsByColor("green");
-});
 let selectBlueDot = document.querySelector(".user-blueDot");
-selectBlueDot.addEventListener("click", () => {
-  selectNumsByColor("blue");
-});
 let selectPurpleDot = document.querySelector(".user-purpleDot");
-selectPurpleDot.addEventListener("click", () => {
-  selectNumsByColor("purple");
-});
 let selectBrownDot = document.querySelector(".user-brownDot");
-selectBrownDot.addEventListener("click", () => {
-  selectNumsByColor("brown");
-});
 let selectYellowDot = document.querySelector(".user-yellowDot");
-selectYellowDot.addEventListener("click", () => {
-  selectNumsByColor("yellow");
-});
 let selectOrangeDot = document.querySelector(".user-orangeDot");
-selectOrangeDot.addEventListener("click", () => {
-  selectNumsByColor("orange");
-});
 let selectBlackDot = document.querySelector(".user-blackDot");
-selectBlackDot.addEventListener("click", () => {
-  selectNumsByColor("black");
-});
-
+function addListenerToDots(){
+  selectRedDot.addEventListener("click", () => {
+    selectNumsByColor("red");
+  });
+  selectGreenDot.addEventListener("click", () => {
+    selectNumsByColor("green");
+  });
+  selectBlueDot.addEventListener("click", () => {
+    selectNumsByColor("blue");
+  });
+  selectPurpleDot.addEventListener("click", () => {
+    selectNumsByColor("purple");
+  });
+  selectBrownDot.addEventListener("click", () => {
+    selectNumsByColor("brown");
+  });
+  selectYellowDot.addEventListener("click", () => {
+    selectNumsByColor("yellow");
+  });
+  selectOrangeDot.addEventListener("click", () => {
+    selectNumsByColor("orange");
+  });
+  selectBlackDot.addEventListener("click", () => {
+    selectNumsByColor("black");
+  });
+}
+addListenerToDots();
 //  all nums same color
 let allRedBox = document.querySelectorAll(".user-boxRed");
 let allGreenBox = document.querySelectorAll(".user-boxGreen");
@@ -56,6 +58,7 @@ let allBrownBox = document.querySelectorAll(".user-boxBrown");
 let allYellowBox = document.querySelectorAll(".user-boxYellow");
 let allOrangeBox = document.querySelectorAll(".user-boxOrange");
 let allBlackBox = document.querySelectorAll(".user-boxBlack");
+let forAllSelected = document.querySelectorAll(".for-select");
 
 // selectors for right user view
 let userViewTicket = document.querySelector(".user-viewTickets");
@@ -63,7 +66,7 @@ let userViewBalls = document.querySelector(".user-viewBalls");
 let confirmBtn = document.querySelector(".confirmBtn");
 confirmBtn.addEventListener("click", confirmTicket);
 let successfulTicketsView = document.querySelector(".user-successfulTickets");
-let successBallsView = document.querySelector(".user-successBalls");
+// let successBallsView = document.querySelector(".user-successBalls");
 
 let round = 69;
 let mins = 0;
@@ -74,11 +77,12 @@ let lucky = {};
 // let randomNum;
 // ****************************
 userTicket = {
+  clickOnDot: false,
   isSelectedNumsFull: false,
   selectedNums: [],
   activTickets: {
     ticketNo1: {
-      round: 0,
+      round: round,
       activeNums: [],
       winnNums: [],
     },
@@ -254,12 +258,16 @@ function confirmTicket() {
     box += `<div class="user-boxSuccess">${num}</div>`;
   });
   let template = `
+
+  <div class="user-successTicketWrapper">
+                    
     <div class="user-successBalls">
       ${box}
     </div>
       <div class="user-stakeSuccess ">
       <h3>Stake</h3> <span>1,00</span>
     </div> 
+  </div>
   `.trim();
   successfulTicketsView.innerHTML += template;
   userViewTicket.classList.add("hide");
@@ -281,6 +289,8 @@ function addNumsInUserTicket() {
   userTicket.activTickets.ticketNo1.activeNums = userTicket.selectedNums;
   userTicket.selectedNums = [];
   userTicket.isSelectedNumsFull = false;
+  onlyOneTicketPerUser();
+  resetAllSelectedNums();
   console.log(userTicket, "cili iz addNumsa");
 }
 
@@ -314,7 +324,35 @@ function checkingWinnNumbers(currWinnNumber) {
     }
   }
 }
+function onlyOneTicketPerUser(){
+  if(userTicket.activTickets.ticketNo1.activeNums.length > 0){
+      selectRedDot.replaceWith(selectRedDot.cloneNode(true));
+      console.log(userTicket.activTickets.ticketNo1.activeNums.length);
+      console.log(userTicket.activTickets.ticketNo1.winnNums.length);
+  }
+  else{
+    // TODO 23.07 tu sam stao tribam odredit da se samo jedan listic moze odigrat, odnosno kad se jedan uplati da se skine listener sa svih do sljedece runde
+    addListenerToDots();
+  }
+}
 
+// restart aktivnih listica
+function resetActivTicket(){
+  // console.log("skidam vidljivost");
+  if(!successfulTicketsView.classList.contains("hide")){
+    successfulTicketsView.classList.add("hide");
+    let successTicketwrapper = document.querySelector(".user-successTicketWrapper");
+    successfulTicketsView.removeChild(successTicketwrapper)
+    userTicket.activTickets.ticketNo1.activeNums = []; 
+    userTicket.activTickets.ticketNo1.winnNums = []; 
+  }
+}
+
+function resetAllSelectedNums(){
+  forAllSelected.forEach((select) => {
+    select.classList.remove("user-activeNumResult");
+  })
+}
 // staro
 
 startBtn.addEventListener("click", nextRound);
@@ -341,6 +379,11 @@ function resetGame() {
     }
     allBoxes[i].style.background = "rgba(20, 19, 19, 0.5)";
   }
+  if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
+    userTicket.activTickets.ticketNo1.round = round;
+  } else {
+    console.log("You have no payments for this round");
+  }
   lucky.noRound = round;
   lucky.numsShuffle = [];
   lucky.nums = [];
@@ -348,6 +391,7 @@ function resetGame() {
 }
 
 function startTime() {
+  console.log("na startu", userTicket);
   let loop = setInterval(() => {
     timer.innerHTML = `<h1 class="time">0${mins} : ${sec}</h1>`;
     if (sec === 0 && mins >= 0) {
@@ -520,14 +564,8 @@ function displayWinNums() {
       // za provjerit imam li u odabranim brojevima
       if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
         checkingWinnNumbers(currWinnNumber);
-        // console.log("odigro");
-      } else {
-        console.log("You have no payments for this round");
       }
 
-      console.log(lucky.numsShuffle[counter]);
-
-      // radi mi ali trebo bi naci bolji nacin da ne opterecivam kod sa ovom foreach petljom
       boxResult.forEach((number) => {
         if (number.innerHTML == lucky.numsShuffle[counter]) {
           number.classList.add("activeNumResult");
@@ -536,7 +574,7 @@ function displayWinNums() {
 
       counter++;
     }
-  }, 2000);
+  }, 500);
 }
 
 function showResults() {
@@ -575,7 +613,6 @@ function showResults() {
   }
   // tribam rijesit opciju za opciju koja nosi duple kuglice
   // za dodavanje aktivnih boja na rezultate mi se nalazi u funkciji displayWins
-
   setTimeout(restartResults, 5000);
 }
 
@@ -585,6 +622,7 @@ function restartResults() {
   });
   mainView.style.display = "block";
   showResultsView.style.display = "none";
+  resetActivTicket();
   resetGame();
 }
 
