@@ -12,10 +12,13 @@
 
     <main>
         <header>
-            <h2>Try Your luck!</h2>
-            <!-- <h1>Lucky six</h1> -->
-            <button class="startBtn">START</button>
             <h2> Round : <span class="roundNumber"></span></h2>
+            <h1>Lucky six</h1>
+
+
+            <h2>Amount : <span class="headerCurrentAmount"></span> 	&euro; </h2> 
+
+            <button class="startBtn">START</button>
         </header>
 
         <section class="mainView">
@@ -338,128 +341,6 @@
 
         </section>
 
-        <section class="userInterface">
-            <div class="userRoundInfo">
-                <h1>Chose your lucky numbers for next round</h1>
-                <h2>Round: <span class="resultRound">71</span> </h2>
-                <hr>
-            </div>
-
-            <article class="user-selectNums">
-
-                <div class="user-redBalls">
-                    <div class="for-select user-redDot"></div>
-                    <div class="for-select user-boxRed">1</div>
-                    <div class="for-select user-boxRed">9</div>
-                    <div class="for-select user-boxRed">17</div>
-                    <div class="for-select user-boxRed">25</div>
-                    <div class="for-select user-boxRed">33</div>
-                    <div class="for-select user-boxRed">41</div>
-                </div>
-
-                <div class="user-greenBalls">
-                    <div class="user-greenDot"></div>
-                    <div class="for-select user-boxGreen">2</div>
-                    <div class="for-select user-boxGreen">10</div>
-                    <div class="for-select user-boxGreen">18</div>
-                    <div class="for-select user-boxGreen">26</div>
-                    <div class="for-select user-boxGreen">34</div>
-                    <div class="for-select user-boxGreen">42</div>
-                </div>
-
-                <div class="user-blueBalls">
-                    <div class="user-blueDot"></div>
-                    <div class="for-select user-boxBlue">3</div>
-                    <div class="for-select user-boxBlue">11</div>
-                    <div class="for-select user-boxBlue">19</div>
-                    <div class="for-select user-boxBlue">27</div>
-                    <div class="for-select user-boxBlue">35</div>
-                    <div class="for-select user-boxBlue">43</div>
-                </div>
-
-                <div class="user-purpleBalls">
-                    <div class="user-purpleDot"></div>
-                    <div class="for-select user-boxPurple">4</div>
-                    <div class="for-select user-boxPurple">12</div>
-                    <div class="for-select user-boxPurple">20</div>
-                    <div class="for-select user-boxPurple">28</div>
-                    <div class="for-select user-boxPurple">36</div>
-                    <div class="for-select user-boxPurple">44</div>
-                </div>
-
-                <div class="user-brownBalls">
-                    <div class="user-brownDot"></div>
-                    <div class="for-select user-boxBrown">5</div>
-                    <div class="for-select user-boxBrown">13</div>
-                    <div class="for-select user-boxBrown">21</div>
-                    <div class="for-select user-boxBrown">29</div>
-                    <div class="for-select user-boxBrown">37</div>
-                    <div class="for-select user-boxBrown">45</div>
-                </div>
-
-                <div class="user-yellowBalls">
-                    <div class="user-yellowDot"></div>
-                    <div class="for-select user-boxYellow">6</div>
-                    <div class="for-select user-boxYellow">14</div>
-                    <div class="for-select user-boxYellow">22</div>
-                    <div class="for-select user-boxYellow">30</div>
-                    <div class="for-select user-boxYellow">38</div>
-                    <div class="for-select user-boxYellow">46</div>
-                </div>
-
-                <div class="user-orangeBalls">
-                    <div class="user-orangeDot"></div>
-                    <div class="for-select user-boxOrange">7</div>
-                    <div class="for-select user-boxOrange">15</div>
-                    <div class="for-select user-boxOrange">23</div>
-                    <div class="for-select user-boxOrange">31</div>
-                    <div class="for-select user-boxOrange">39</div>
-                    <div class="for-select user-boxOrange">47</div>
-                </div>
-
-                <div class="user-blackBalls">
-                    <div class="user-blackDot"></div>
-                    <div class="for-select user-boxBlack">8</div>
-                    <div class="for-select user-boxBlack">16</div>
-                    <div class="for-select user-boxBlack">24</div>
-                    <div class="for-select user-boxBlack">32</div>
-                    <div class="for-select user-boxBlack">40</div>
-                    <div class="for-select user-boxBlack">48</div>
-                </div>
-
-            </article>
-
-            <article class="user-selectedNums">
-
-                <div class="user-viewTickets hide">
-                    <div class="user-viewBalls">
-                        <!-- <div class="user-boxView">8</div>
-                        <div class="user-boxView">16</div>
-                        <div class="user-boxView">24</div>
-                        <div class="user-boxView">32</div>
-                        <div class="user-boxView">40</div>
-                        <div class="user-boxView">48</div> -->
-                    </div>
-                    <div class="user-stakeTickets">
-                        <h3>Stake</h3> <span>1,00</span>
-                        <button class="confirmBtn">CONFIRM</button>
-                    </div> 
-                </div>
-
-                
-                <div class="user-successfulTickets hide">
-                <h2>Active Tickets  </h2>
-                <!-- <div class="user-successTicketWrapper">
-
-                </div> -->
-
-                </div>
-                
-            </article>
-
-        </section>
-
-
         <section class="showResults">
 
             <div class="roundInfo">
@@ -574,6 +455,138 @@
 
             </article>
         </section>
+
+        <section class="userInterface">
+            <div class="userRoundInfo">
+                <h1>CHOOSE YOUR NUMBERS FOR THE ROUND NO.  <span class="user-resultRound"></span> </h1> 
+                <hr>
+            </div>
+
+            <article class="user-selectNums">
+
+                <div class="user-redBalls">
+                    <div class="for-select user-redDot" id=1></div>
+                    <div class="for-select user-boxRed">1</div>
+                    <div class="for-select user-boxRed">9</div>
+                    <div class="for-select user-boxRed">17</div>
+                    <div class="for-select user-boxRed">25</div>
+                    <div class="for-select user-boxRed">33</div>
+                    <div class="for-select user-boxRed">41</div>
+                </div>
+
+                <div class="user-greenBalls">
+                    <div class="user-greenDot" id=2></div>
+                    <div class="for-select user-boxGreen">2</div>
+                    <div class="for-select user-boxGreen">10</div>
+                    <div class="for-select user-boxGreen">18</div>
+                    <div class="for-select user-boxGreen">26</div>
+                    <div class="for-select user-boxGreen">34</div>
+                    <div class="for-select user-boxGreen">42</div>
+                </div>
+
+                <div class="user-blueBalls">
+                    <div class="user-blueDot" id=3></div>
+                    <div class="for-select user-boxBlue">3</div>
+                    <div class="for-select user-boxBlue">11</div>
+                    <div class="for-select user-boxBlue">19</div>
+                    <div class="for-select user-boxBlue">27</div>
+                    <div class="for-select user-boxBlue">35</div>
+                    <div class="for-select user-boxBlue">43</div>
+                </div>
+
+                <div class="user-purpleBalls">
+                    <div class="user-purpleDot" id=4></div>
+                    <div class="for-select user-boxPurple">4</div>
+                    <div class="for-select user-boxPurple">12</div>
+                    <div class="for-select user-boxPurple">20</div>
+                    <div class="for-select user-boxPurple">28</div>
+                    <div class="for-select user-boxPurple">36</div>
+                    <div class="for-select user-boxPurple">44</div>
+                </div>
+
+                <div class="user-brownBalls">
+                    <div class="user-brownDot" id=5></div>
+                    <div class="for-select user-boxBrown">5</div>
+                    <div class="for-select user-boxBrown">13</div>
+                    <div class="for-select user-boxBrown">21</div>
+                    <div class="for-select user-boxBrown">29</div>
+                    <div class="for-select user-boxBrown">37</div>
+                    <div class="for-select user-boxBrown">45</div>
+                </div>
+
+                <div class="user-yellowBalls">
+                    <div class="user-yellowDot" id=6></div>
+                    <div class="for-select user-boxYellow">6</div>
+                    <div class="for-select user-boxYellow">14</div>
+                    <div class="for-select user-boxYellow">22</div>
+                    <div class="for-select user-boxYellow">30</div>
+                    <div class="for-select user-boxYellow">38</div>
+                    <div class="for-select user-boxYellow">46</div>
+                </div>
+
+                <div class="user-orangeBalls">
+                    <div class="user-orangeDot" id=7></div>
+                    <div class="for-select user-boxOrange">7</div>
+                    <div class="for-select user-boxOrange">15</div>
+                    <div class="for-select user-boxOrange">23</div>
+                    <div class="for-select user-boxOrange">31</div>
+                    <div class="for-select user-boxOrange">39</div>
+                    <div class="for-select user-boxOrange">47</div>
+                </div>
+
+                <div class="user-blackBalls">
+                    <div class="user-blackDot" id=8></div>
+                    <div class="for-select user-boxBlack">8</div>
+                    <div class="for-select user-boxBlack">16</div>
+                    <div class="for-select user-boxBlack">24</div>
+                    <div class="for-select user-boxBlack">32</div>
+                    <div class="for-select user-boxBlack">40</div>
+                    <div class="for-select user-boxBlack">48</div>
+                </div>
+
+            </article>
+
+            <article class="user-selectedNumsWrapper">
+                <marquee><h2> !!! for now only one ticket per round !!! </h2></marquee>
+
+                <div class="user-selectedNums">
+    
+                    <div class="user-viewTickets hide">
+                        <div class="user-viewBalls">
+                            <!-- <div class="user-boxView">8</div>
+                            <div class="user-boxView">16</div>
+                            <div class="user-boxView">24</div>
+                            <div class="user-boxView">32</div>
+                            <div class="user-boxView">40</div>
+                            <div class="user-boxView">48</div> -->
+                        </div>
+                        <div class="user-roundInfo">
+                            <h3>Round :</h3>
+                            <span class="user-noOfRoundInfo"></span>
+                        </div>
+                        <div class="user-stakeTickets">
+                            <h3>Stake</h3> <span>1,00</span>
+                            <button class="confirmBtn">CONFIRM</button>
+                        </div> 
+                    </div>
+    
+                    
+                    <div class="user-successfulTickets hide">
+                    <h2>Active Tickets  </h2>
+                    <!-- <div class="user-successTicketWrapper">
+    
+                    </div> -->
+    
+                    </div>
+                    
+                </div>
+            </article>
+
+
+        </section>
+
+
+
 
     </main>
 

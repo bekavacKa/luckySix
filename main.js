@@ -11,6 +11,8 @@ let boxResult = document.querySelectorAll(".boxResult");
 let mainView = document.querySelector(".mainView");
 let showResultsView = document.querySelector(".showResults");
 let resultRound = document.querySelector(".resultRound");
+let headerCurrentAmount = document.querySelector(".headerCurrentAmount");
+let userResultRound  = document.querySelector(".user-resultRound");
 
 // select user interface
 // dots for all nums with same color selecet
@@ -22,31 +24,56 @@ let selectBrownDot = document.querySelector(".user-brownDot");
 let selectYellowDot = document.querySelector(".user-yellowDot");
 let selectOrangeDot = document.querySelector(".user-orangeDot");
 let selectBlackDot = document.querySelector(".user-blackDot");
-function addListenerToDots(){
-  selectRedDot.addEventListener("click", () => {
-    selectNumsByColor("red");
-  });
-  selectGreenDot.addEventListener("click", () => {
-    selectNumsByColor("green");
-  });
-  selectBlueDot.addEventListener("click", () => {
-    selectNumsByColor("blue");
-  });
-  selectPurpleDot.addEventListener("click", () => {
-    selectNumsByColor("purple");
-  });
-  selectBrownDot.addEventListener("click", () => {
-    selectNumsByColor("brown");
-  });
-  selectYellowDot.addEventListener("click", () => {
-    selectNumsByColor("yellow");
-  });
-  selectOrangeDot.addEventListener("click", () => {
-    selectNumsByColor("orange");
-  });
-  selectBlackDot.addEventListener("click", () => {
-    selectNumsByColor("black");
-  });
+
+
+function selectDot() {
+  let colorId =Number(this.id);
+  switch (colorId) {
+    case 1:
+      selectNumsByColor("red");
+      break;
+
+    case 2:
+      selectNumsByColor("green");
+      break;
+
+    case 3:
+      selectNumsByColor("blue");
+      break;
+
+    case 4:
+      selectNumsByColor("purple");
+      break;
+
+    case 5:
+      selectNumsByColor("brown");
+      break;
+
+    case 6:
+      selectNumsByColor("yellow");
+      break;
+
+    case 7:
+      selectNumsByColor("orange");
+      break;
+
+    case 8:
+      selectNumsByColor("black");
+      break;
+
+    default:
+      break;
+  }
+}
+function addListenerToDots() {
+  selectRedDot.addEventListener("click", selectDot);
+  selectGreenDot.addEventListener("click", selectDot);
+  selectBlueDot.addEventListener("click", selectDot);
+  selectPurpleDot.addEventListener("click", selectDot);
+  selectBrownDot.addEventListener("click", selectDot);
+  selectYellowDot.addEventListener("click", selectDot);
+  selectOrangeDot.addEventListener("click", selectDot);
+  selectBlackDot.addEventListener("click", selectDot);
 }
 addListenerToDots();
 //  all nums same color
@@ -66,14 +93,17 @@ let userViewBalls = document.querySelector(".user-viewBalls");
 let confirmBtn = document.querySelector(".confirmBtn");
 confirmBtn.addEventListener("click", confirmTicket);
 let successfulTicketsView = document.querySelector(".user-successfulTickets");
+let roundUserTicket = document.querySelector(".user-noOfRoundInfo");
 // let successBallsView = document.querySelector(".user-successBalls");
 
-let round = 69;
+let startAmount = 200;
+headerCurrentAmount.innerHTML = startAmount;
+let currentRound = 27;
+userResultRound.innerHTML = currentRound + 1;
 let mins = 0;
 let sec = 0;
 let lucky = {};
 // lucky.nums = [];
-// lucky.numsShuffle = [];
 // let randomNum;
 // ****************************
 userTicket = {
@@ -82,7 +112,7 @@ userTicket = {
   selectedNums: [],
   activTickets: {
     ticketNo1: {
-      round: round,
+      round: currentRound + 1,
       activeNums: [],
       winnNums: [],
     },
@@ -247,6 +277,7 @@ function insertNumsInUserView() {
     userViewTicket.classList.add("hide");
   }
   userViewBalls.innerHTML = boxes;
+  roundUserTicket.innerHTML = userTicket.activTickets.ticketNo1.round;
   // console.log(userTicket.selectedNums);
 }
 
@@ -264,8 +295,14 @@ function confirmTicket() {
     <div class="user-successBalls">
       ${box}
     </div>
-      <div class="user-stakeSuccess ">
-      <h3>Stake</h3> <span>1,00</span>
+    <div class="user-successInfo">
+        <h3>Round :</h3>
+        <span class="user-successRound">${userTicket.activTickets.ticketNo1.round}</span>
+    </div>
+    <div class="user-stakeSuccess ">
+      <h3>Stake</h3>
+      <h2 class="user-stakeSuccessWinn hide"> WINNN </h2> 
+      <span>1,00</span>
     </div> 
   </div>
   `.trim();
@@ -280,78 +317,222 @@ function checkisSelectedNumsFull() {
     userTicket.isSelectedNumsFull = true;
   } else {
     userTicket.isSelectedNumsFull = false;
-    console.log(userTicket.isSelectedNumsFull, "tajj");
+    // console.log(userTicket.isSelectedNumsFull, "tajj");
     addNumsInUserTicket();
   }
 }
 
 function addNumsInUserTicket() {
+  let currAmount = document.querySelector(".headerCurrentAmount");
+  let amountAfterConfirm = Number(currAmount.innerHTML) - 1;
+  currAmount.innerHTML = amountAfterConfirm;
   userTicket.activTickets.ticketNo1.activeNums = userTicket.selectedNums;
   userTicket.selectedNums = [];
   userTicket.isSelectedNumsFull = false;
   onlyOneTicketPerUser();
   resetAllSelectedNums();
-  console.log(userTicket, "cili iz addNumsa");
+  // console.log(userTicket, "cili iz addNumsa");
 }
 
 
-// TODO: sam stao 22.07 sad moram provjerit koliko je korisnik dobio, odnosno koji innerHtml je imao kada je bio zdanji push, i tribam napravit da nije push kada pogodim nroj nego da odradim slice
-
-function checkingWinnNumbers(currWinnNumber) {
+function checkingWinnNumbers(currWinnNumber, counter) {
   // console.log(currWinnNumber, "iz funkcije");
-  if (
-    userTicket.activTickets.ticketNo1.activeNums.find(
-      (num) => num === currWinnNumber
-    )
-  ) {
-    let currentNum = 0;
-    currentNum = userTicket.activTickets.ticketNo1.activeNums.find(
-      (num) => num === currWinnNumber
-    );
-    userTicket.activTickets.ticketNo1.winnNums.push(currentNum);
-    if (currentNum > 0) {
-      // console.log(
-      //   "dobitni i veci od 0",
-      //   userTicket.activTickets.ticketNo1.winnNums
-      // );
-      let allActivNums = document.querySelectorAll(".user-boxSuccess");
-      // console.log(allActivNums);
-      allActivNums.forEach((accNum) => {
-        if (parseInt(accNum.innerHTML) === currentNum) {
-          accNum.classList.add("acive-winn");
-        }
-      });
+  // console.log(counter, "iz koji je izaso funkcije");
+
+  if (userTicket.activTickets.ticketNo1.activeNums.find((num) => num === currWinnNumber)) {
+    userTicket.activTickets.ticketNo1.winnNums.push(currWinnNumber);
+    if((userTicket.activTickets.ticketNo1.activeNums.length === 6) && (userTicket.activTickets.ticketNo1.winnNums.length === 6) && (userTicket.activTickets.ticketNo1.round === currentRound)){
+      checkingWinnAmount(currWinnNumber, counter);
     }
+    let allActivNums = document.querySelectorAll(".user-boxSuccess");
+    allActivNums.forEach((accNum) => {
+      if ((parseInt(accNum.innerHTML) === currWinnNumber) && (userTicket.activTickets.ticketNo1.round === currentRound)) {
+        accNum.classList.add("acive-winn");
+      }
+    });
   }
 }
-function onlyOneTicketPerUser(){
-  if(userTicket.activTickets.ticketNo1.activeNums.length > 0){
-      selectRedDot.replaceWith(selectRedDot.cloneNode(true));
-      console.log(userTicket.activTickets.ticketNo1.activeNums.length);
-      console.log(userTicket.activTickets.ticketNo1.winnNums.length);
+function checkingWinnAmount(lastWinn, counter){
+  let winnValue;
+  switch (counter) {
+    case 5:
+      winnValue = 10000;
+      calcWin(winnValue);
+      break;
+    case 6:
+      winnValue = 7500;
+      calcWin(winnValue);
+      break;
+    case 7:
+      winnValue = 5000;
+      calcWin(winnValue);
+      break;
+    case 8:
+      winnValue = 2500;
+      calcWin(winnValue);
+      break;
+    case 9:
+      winnValue = 1000;
+      calcWin(winnValue);
+      break;
+    case 10:
+      winnValue = 500;
+      calcWin(winnValue);
+      break;
+    case 11:
+      winnValue = 300;
+      calcWin(winnValue);
+      break;
+    case 12:
+      winnValue = 200;
+      calcWin(winnValue);
+      break;
+    case 13:
+      winnValue = 150;
+      calcWin(winnValue);
+      break;
+    case 14:
+      winnValue = 100;
+      calcWin(winnValue);
+      break;
+    case 15:
+      winnValue = 90;
+      calcWin(winnValue);
+      break;
+    case 16:
+      winnValue = 80;
+      calcWin(winnValue);
+      break;
+    case 17:
+      winnValue = 70;
+      calcWin(winnValue);
+      break;
+    case 18:
+      winnValue = 60;
+      calcWin(winnValue);
+      break;
+    case 19:
+      winnValue = 50;
+      calcWin(winnValue);
+      break;
+    case 20:
+      winnValue = 40;
+      calcWin(winnValue);
+      break;
+    case 21:
+      winnValue = 30;
+      calcWin(winnValue);
+      break;
+    case 22:
+      winnValue = 25;
+      calcWin(winnValue);
+      break;
+    case 23:
+      winnValue = 20;
+      calcWin(winnValue);
+      break;
+    case 24:
+      winnValue = 15;
+      calcWin(winnValue);
+      break;
+    case 25:
+      winnValue = 10;
+      calcWin(winnValue);
+      break;
+    case 26:
+      winnValue = 9;
+      calcWin(winnValue);
+      break;
+    case 27:
+      winnValue = 8;
+      calcWin(winnValue);
+      break;
+    case 28:
+      winnValue = 7;
+      calcWin(winnValue);
+      break;
+    case 29:
+      winnValue = 6;
+      calcWin(winnValue);
+      break;
+    case 30:
+      winnValue = 5;
+      calcWin(winnValue);
+      break;
+    case 31:
+      winnValue = 4;
+      calcWin(winnValue);
+      break;
+    case 32:
+      winnValue = 3;
+      calcWin(winnValue);
+      break;
+    case 33:
+      winnValue = 2;
+      calcWin(winnValue);
+      break;
+    case 34:
+      winnValue = 1;
+      calcWin(winnValue);
+      break;
+  
+    default:
+      break;
   }
-  else{
-    // TODO 23.07 tu sam stao tribam odredit da se samo jedan listic moze odigrat, odnosno kad se jedan uplati da se skine listener sa svih do sljedece runde
+}
+
+
+function calcWin(winnValue){
+  let winInfo = document.querySelector(".user-stakeSuccessWinn");
+  if (winInfo.classList.contains("hide")) {
+    winInfo.classList.remove("hide");
+    console.log(winnValue, " iz calc ste dobili" , headerCurrentAmount.innerHTML);
+    setTimeout(() => {
+      let amountBefore = Number(headerCurrentAmount.innerHTML);
+      let updatedWinn = winnValue + amountBefore;
+      headerCurrentAmount.innerHTML = updatedWinn;
+      winInfo.innerHTML = "WINN PAID OUT"
+    }, 3000);   
+    // TODO 28.07 zavrseno sve sta sam planiro, tu stao, sad moram napravit mogucnost za odabir pojedninacnih brojeva na klik
+  }
+}
+
+function onlyOneTicketPerUser() {
+  if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
+    // selectRedDot.replaceWith(selectRedDot.cloneNode(true));
+    selectRedDot.removeEventListener("click", selectDot);
+    selectGreenDot.removeEventListener("click", selectDot);
+    selectBlueDot.removeEventListener("click", selectDot);
+    selectPurpleDot.removeEventListener("click", selectDot);
+    selectBrownDot.removeEventListener("click", selectDot);
+    selectYellowDot.removeEventListener("click", selectDot);
+    selectOrangeDot.removeEventListener("click", selectDot);
+    selectBlackDot.removeEventListener("click", selectDot);
+    // console.log(userTicket.activTickets.ticketNo1.activeNums.length);
+    // console.log(userTicket.activTickets.ticketNo1.winnNums.length);
+  } 
+}
+
+// restart aktivnih listica
+function resetActivTicket() {
+  // console.log("skidam vidljivost");
+  if (!successfulTicketsView.classList.contains("hide")) {
+    successfulTicketsView.classList.add("hide");
+    let successTicketwrapper = document.querySelector(
+      ".user-successTicketWrapper"
+    );
+    successfulTicketsView.removeChild(successTicketwrapper);
+    userTicket.activTickets.ticketNo1.activeNums = [];
+    userTicket.activTickets.ticketNo1.winnNums = [];
+    userTicket.activTickets.ticketNo1.round = currentRound + 1;
     addListenerToDots();
   }
 }
 
-// restart aktivnih listica
-function resetActivTicket(){
-  // console.log("skidam vidljivost");
-  if(!successfulTicketsView.classList.contains("hide")){
-    successfulTicketsView.classList.add("hide");
-    let successTicketwrapper = document.querySelector(".user-successTicketWrapper");
-    successfulTicketsView.removeChild(successTicketwrapper)
-    userTicket.activTickets.ticketNo1.activeNums = []; 
-    userTicket.activTickets.ticketNo1.winnNums = []; 
-  }
-}
-
-function resetAllSelectedNums(){
+function resetAllSelectedNums() {
   forAllSelected.forEach((select) => {
     select.classList.remove("user-activeNumResult");
-  })
+  });
 }
 // staro
 
@@ -365,10 +546,12 @@ function nextRound() {
 
 function resetGame() {
   timer.style.background = "none";
-  round++;
+  currentRound++;
+  userTicket.activTickets.ticketNo1.round = currentRound;
+  userResultRound.innerHTML = currentRound + 1;
   mins = 0;
-  sec = 1;
-  roundNum.innerHTML = round;
+  sec = 3;
+  roundNum.innerHTML = currentRound;
   for (let i = 0; i < allBoxes.length; i++) {
     let boxChild = allBoxes[i].querySelector("h1");
     if (boxChild) {
@@ -380,11 +563,11 @@ function resetGame() {
     allBoxes[i].style.background = "rgba(20, 19, 19, 0.5)";
   }
   if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
-    userTicket.activTickets.ticketNo1.round = round;
+    userTicket.activTickets.ticketNo1.round = currentRound;
   } else {
     console.log("You have no payments for this round");
   }
-  lucky.noRound = round;
+  lucky.noRound = currentRound;
   lucky.numsShuffle = [];
   lucky.nums = [];
   startTime();
@@ -397,7 +580,7 @@ function startTime() {
     if (sec === 0 && mins >= 0) {
       if (sec === 0 && mins === 0) {
         clearInterval(loop);
-        roundNum.innerHTML = round;
+        roundNum.innerHTML = currentRound;
         timer.innerHTML = `<h1 class="time"> READY ? </h1>`;
         timer.style.background = "yellowgreen";
 
@@ -430,6 +613,8 @@ function getRandomNums() {
     lucky.numsShuffle.push(lucky.nums[rand]);
     lucky.nums.splice(rand, 1);
   }
+    // lucky.numsShuffle = [8,16,24,32,40,48,1,2,33,41,3,4,5,6,7,25,9,10,17,11,13,12,14,15,18,19,20,44];
+
   displayWinNums();
 }
 
@@ -563,7 +748,7 @@ function displayWinNums() {
       let currWinnNumber = lucky.numsShuffle[counter];
       // za provjerit imam li u odabranim brojevima
       if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
-        checkingWinnNumbers(currWinnNumber);
+        checkingWinnNumbers(currWinnNumber, counter);
       }
 
       boxResult.forEach((number) => {
@@ -580,7 +765,7 @@ function displayWinNums() {
 function showResults() {
   mainView.style.display = "none";
   showResultsView.style.display = "flex";
-  resultRound.innerHTML = round;
+  resultRound.innerHTML = currentRound;
   localStorage.setItem("resultsCurrentRound", JSON.stringify(lucky));
 
   let allFirstFive = [];
