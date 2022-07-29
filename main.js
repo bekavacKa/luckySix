@@ -1,9 +1,11 @@
+// btn for testing to start the timer
+let startBtn = document.querySelector(".startBtn");
+
 let timer = document.querySelector(".cBox");
 let topBoxes = document.querySelectorAll(".tBox");
 let allBoxes = document.querySelectorAll(".allBox");
 let roundNum = document.querySelector(".roundNumber");
 let amount = document.querySelectorAll(".amount");
-let startBtn = document.querySelector(".startBtn");
 let firstFive = document.querySelectorAll(".firstFive");
 let evenOrOdds = document.querySelector(".evenOrOdds");
 let sumNum = document.querySelector(".sumNum");
@@ -25,7 +27,57 @@ let selectYellowDot = document.querySelector(".user-yellowDot");
 let selectOrangeDot = document.querySelector(".user-orangeDot");
 let selectBlackDot = document.querySelector(".user-blackDot");
 
+//  all nums same color
+let allRedBox = document.querySelectorAll(".user-boxRed");
+let allGreenBox = document.querySelectorAll(".user-boxGreen");
+let allBlueBox = document.querySelectorAll(".user-boxBlue");
+let allPurpleBox = document.querySelectorAll(".user-boxPurple");
+let allBrownBox = document.querySelectorAll(".user-boxBrown");
+let allYellowBox = document.querySelectorAll(".user-boxYellow");
+let allOrangeBox = document.querySelectorAll(".user-boxOrange");
+let allBlackBox = document.querySelectorAll(".user-boxBlack");
+let forAllSelected = document.querySelectorAll(".for-select");
 
+// selectors for right user view
+let userViewTicket = document.querySelector(".user-viewTickets");
+let userViewBalls = document.querySelector(".user-viewBalls");
+let confirmBtn = document.querySelector(".confirmBtn");
+let successfulTicketsView = document.querySelector(".user-successfulTickets");
+let roundUserTicket = document.querySelector(".user-noOfRoundInfo");
+// let successBallsView = document.querySelector(".user-successBalls");
+
+// setting startup parameters
+let startAmount = 200;
+headerCurrentAmount.innerHTML = startAmount;
+let currentRound = 27;
+userResultRound.innerHTML = currentRound + 1;
+let lucky = {};
+// lucky.nums = [];
+// let randomNum;
+// ****************************
+userTicket = {
+  clickOnDot: false,
+  isSelectedNumsFull: false,
+  selectedNums: [],
+  activTickets: {
+    ticketNo1: {
+      round: currentRound + 1,
+      activeNums: [],
+      winnNums: [],
+    },
+  },
+};
+let infoResult = {};
+// let userTicket = {};
+// userTicket.isSelectedNumsFull = false;
+// userTicket.selectedNums = [];
+// userTicket.activTickets={};
+// userTicket.activTickets.ticketNo1={};
+// userTicket.activTickets.ticketNo1.round = 0;
+// userTicket.activTickets.ticketNo1.activeNums =[];
+// userTicket.activTickets.ticketNo1.winnNums =[];
+
+nextRound();
 function selectDot() {
   let colorId =Number(this.id);
   switch (colorId) {
@@ -76,58 +128,86 @@ function addListenerToDots() {
   selectBlackDot.addEventListener("click", selectDot);
 }
 addListenerToDots();
-//  all nums same color
-let allRedBox = document.querySelectorAll(".user-boxRed");
-let allGreenBox = document.querySelectorAll(".user-boxGreen");
-let allBlueBox = document.querySelectorAll(".user-boxBlue");
-let allPurpleBox = document.querySelectorAll(".user-boxPurple");
-let allBrownBox = document.querySelectorAll(".user-boxBrown");
-let allYellowBox = document.querySelectorAll(".user-boxYellow");
-let allOrangeBox = document.querySelectorAll(".user-boxOrange");
-let allBlackBox = document.querySelectorAll(".user-boxBlack");
-let forAllSelected = document.querySelectorAll(".for-select");
 
-// selectors for right user view
-let userViewTicket = document.querySelector(".user-viewTickets");
-let userViewBalls = document.querySelector(".user-viewBalls");
-let confirmBtn = document.querySelector(".confirmBtn");
-confirmBtn.addEventListener("click", confirmTicket);
-let successfulTicketsView = document.querySelector(".user-successfulTickets");
-let roundUserTicket = document.querySelector(".user-noOfRoundInfo");
-// let successBallsView = document.querySelector(".user-successBalls");
+// select all nums
+let selectedNums = document.querySelectorAll(".for-select");
+selectedNums.forEach(num => {
+  num.addEventListener("click", selectNum)
+})
 
-let startAmount = 200;
-headerCurrentAmount.innerHTML = startAmount;
-let currentRound = 27;
-userResultRound.innerHTML = currentRound + 1;
-let mins = 0;
-let sec = 0;
-let lucky = {};
-// lucky.nums = [];
-// let randomNum;
-// ****************************
-userTicket = {
-  clickOnDot: false,
-  isSelectedNumsFull: false,
-  selectedNums: [],
-  activTickets: {
-    ticketNo1: {
-      round: currentRound + 1,
-      activeNums: [],
-      winnNums: [],
-    },
-  },
-};
 
-let infoResult = {};
-// let userTicket = {};
-// userTicket.isSelectedNumsFull = false;
-// userTicket.selectedNums = [];
-// userTicket.activTickets={};
-// userTicket.activTickets.ticketNo1={};
-// userTicket.activTickets.ticketNo1.round = 0;
-// userTicket.activTickets.ticketNo1.activeNums =[];
-// userTicket.activTickets.ticketNo1.winnNums =[];
+
+
+function selectNum(){
+  // insertNumsInUserView();
+  let currentSelected = Number(this.innerHTML);
+  console.log(userTicket.selectedNums.length);
+
+  if (!userTicket.isSelectedNumsFull && !this.classList.contains("user-activeNumResult")) {
+    console.log("u ifu");
+    
+    if (userTicket.selectedNums.length === 6 ) {
+      userTicket.isSelectedNumsFull = true;
+      console.log("pun", userTicket.selectedNums );
+      console.log(userTicket,"iz IOFF selectNum");
+    }else{
+      this.classList.add("user-activeNumResult");
+      userTicket.selectedNums.push(currentSelected);
+      if(userTicket.selectedNums.length > 0){
+        insertSelectedNumInUserView()
+      }
+    }
+    
+    console.log(userTicket,"iz ifa selectNum");
+
+  }else if(this.classList.contains("user-activeNumResult")){
+    this.classList.remove("user-activeNumResult")
+    // console.log(userTicket.selectedNums, "prije...");
+    // console.log(userTicket.selectedNums.length, "prije...");
+    for (let i = 0; i < userTicket.selectedNums.length; i++) {
+      if(userTicket.selectedNums[i] === currentSelected){
+        userTicket.selectedNums.splice(i, 1)
+      }
+    }
+    if(userTicket.selectedNums.length < 6 ){
+      userTicket.isSelectedNumsFull = false;
+    }
+    insertSelectedNumInUserView()
+    // console.log(userTicket.selectedNums, "poslije...");
+    // console.log(userTicket.selectedNums.length, "poslije...");
+  }
+}
+
+function insertSelectedNumInUserView(){
+  console.log("izz insertSelectedNumInUserView", userTicket.selectedNums);
+  if(userTicket.selectedNums.length === 0){
+    userViewTicket.classList.add("hide");
+  }
+  else{
+    let boxes = ``;
+    if (!userTicket.isSelectedNumsFull) {
+      userViewTicket.classList.remove("hide");
+      userTicket.selectedNums.forEach((num) => {
+      boxes += `<div class="user-boxView">${num}</div>`;
+      });
+      if(userTicket.selectedNums.length === 6){
+        confirmBtn.addEventListener("click", confirmTicket);
+        confirmBtn.style.cursor = "pointer"
+      }
+      else{
+        confirmBtn.removeEventListener("click", confirmTicket);
+        confirmBtn.style.cursor = "not-allowed"
+      }
+    } else {
+      userViewTicket.classList.add("hide");
+    }
+    userViewBalls.innerHTML = boxes;
+    roundUserTicket.innerHTML = userTicket.activTickets.ticketNo1.round;
+  }
+    // console.log(userTicket.selectedNums);
+}
+
+
 
 function selectNumsByColor(color) {
   console.log(userTicket);
@@ -270,9 +350,8 @@ function insertNumsInUserView() {
   if (userTicket.isSelectedNumsFull) {
     userViewTicket.classList.remove("hide");
     userTicket.selectedNums.forEach((num) => {
-      boxes += `<div class="user-boxView">${num}</div>`;
+    boxes += `<div class="user-boxView">${num}</div>`;
     });
-    // do tu doso ssad moram napravit da uplacen listic pređw dole i spremim ga u uplacene
   } else {
     userViewTicket.classList.add("hide");
   }
@@ -338,7 +417,6 @@ function addNumsInUserTicket() {
 function checkingWinnNumbers(currWinnNumber, counter) {
   // console.log(currWinnNumber, "iz funkcije");
   // console.log(counter, "iz koji je izaso funkcije");
-
   if (userTicket.activTickets.ticketNo1.activeNums.find((num) => num === currWinnNumber)) {
     userTicket.activTickets.ticketNo1.winnNums.push(currWinnNumber);
     if((userTicket.activTickets.ticketNo1.activeNums.length === 6) && (userTicket.activTickets.ticketNo1.winnNums.length === 6) && (userTicket.activTickets.ticketNo1.round === currentRound)){
@@ -496,18 +574,29 @@ function calcWin(winnValue){
     // TODO 28.07 zavrseno sve sta sam planiro, tu stao, sad moram napravit mogucnost za odabir pojedninacnih brojeva na klik
   }
 }
+function removeClicksAndView(){
+  selectedNums.forEach(num => {
+    num.removeEventListener("click", selectNum)
+  })
+  selectRedDot.removeEventListener("click", selectDot);
+  selectGreenDot.removeEventListener("click", selectDot);
+  selectBlueDot.removeEventListener("click", selectDot);
+  selectPurpleDot.removeEventListener("click", selectDot);
+  selectBrownDot.removeEventListener("click", selectDot);
+  selectYellowDot.removeEventListener("click", selectDot);
+  selectOrangeDot.removeEventListener("click", selectDot);
+  selectBlackDot.removeEventListener("click", selectDot);
+
+  userViewTicket.classList.add("hide");
+  resetAllSelectedNums()
+  userTicket.selectedNums = [];
+}
+
 
 function onlyOneTicketPerUser() {
   if (userTicket.activTickets.ticketNo1.activeNums.length > 0) {
     // selectRedDot.replaceWith(selectRedDot.cloneNode(true));
-    selectRedDot.removeEventListener("click", selectDot);
-    selectGreenDot.removeEventListener("click", selectDot);
-    selectBlueDot.removeEventListener("click", selectDot);
-    selectPurpleDot.removeEventListener("click", selectDot);
-    selectBrownDot.removeEventListener("click", selectDot);
-    selectYellowDot.removeEventListener("click", selectDot);
-    selectOrangeDot.removeEventListener("click", selectDot);
-    selectBlackDot.removeEventListener("click", selectDot);
+    removeClicksAndView()
     // console.log(userTicket.activTickets.ticketNo1.activeNums.length);
     // console.log(userTicket.activTickets.ticketNo1.winnNums.length);
   } 
@@ -526,6 +615,9 @@ function resetActivTicket() {
     userTicket.activTickets.ticketNo1.winnNums = [];
     userTicket.activTickets.ticketNo1.round = currentRound + 1;
     addListenerToDots();
+    selectedNums.forEach(num => {
+      num.addEventListener("click", selectNum)
+    })
   }
 }
 
@@ -536,7 +628,7 @@ function resetAllSelectedNums() {
 }
 // staro
 
-startBtn.addEventListener("click", nextRound);
+// startBtn.addEventListener("click", nextRound);
 
 // nextRound();
 
@@ -550,7 +642,7 @@ function resetGame() {
   userTicket.activTickets.ticketNo1.round = currentRound;
   userResultRound.innerHTML = currentRound + 1;
   mins = 0;
-  sec = 3;
+  sec = 35;
   roundNum.innerHTML = currentRound;
   for (let i = 0; i < allBoxes.length; i++) {
     let boxChild = allBoxes[i].querySelector("h1");
@@ -613,7 +705,14 @@ function getRandomNums() {
     lucky.numsShuffle.push(lucky.nums[rand]);
     lucky.nums.splice(rand, 1);
   }
-    // lucky.numsShuffle = [8,16,24,32,40,48,1,2,33,41,3,4,5,6,7,25,9,10,17,11,13,12,14,15,18,19,20,44];
+  
+
+  // * if you want it to throw out numbers from 2 onwards
+  // while (lucky.nums.length > 13) {
+  //   let rand = lucky.nums[0];
+  //   lucky.numsShuffle.push(lucky.nums[rand]);
+  //   lucky.nums.splice(rand, 1);
+  // }
 
   displayWinNums();
 }
@@ -621,6 +720,7 @@ function getRandomNums() {
 function displayWinNums() {
   console.log(lucky);
   console.log(lucky.numsShuffle);
+  removeClicksAndView()
 
   let counter = 0;
   let loop = setInterval(() => {
@@ -629,6 +729,10 @@ function displayWinNums() {
       timer.style.background = "yellowgreen";
       timer.innerHTML = "";
       showResults();
+      selectedNums.forEach(num => {
+        num.addEventListener("click", selectNum)
+      })
+      addListenerToDots()
       // resetGame();
       resetAmountColor();
     } else {
@@ -759,7 +863,7 @@ function displayWinNums() {
 
       counter++;
     }
-  }, 500);
+  }, 1500);
 }
 
 function showResults() {
@@ -798,7 +902,7 @@ function showResults() {
   }
   // tribam rijesit opciju za opciju koja nosi duple kuglice
   // za dodavanje aktivnih boja na rezultate mi se nalazi u funkciji displayWins
-  setTimeout(restartResults, 5000);
+  setTimeout(restartResults, 15000);
 }
 
 function restartResults() {

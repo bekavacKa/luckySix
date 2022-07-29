@@ -237,6 +237,16 @@ main .userInterface .user-selectNums {
   display: flex;
   justify-content: space-between;
   flex: 2;
+  user-select: none;
+}
+main .userInterface .user-selectNums .user-redBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-redBalls .for-select:hover {
+  border: 3px solid red;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: red;
 }
 main .userInterface .user-selectNums .user-redBalls .user-redDot {
   cursor: pointer;
@@ -257,13 +267,23 @@ main .userInterface .user-selectNums .user-redBalls .user-boxRed {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-redBalls .user-activeNumResult {
   border: 3px solid red;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-greenBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-greenBalls .for-select:hover {
+  border: 3px solid green;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: green;
 }
 main .userInterface .user-selectNums .user-greenBalls .user-greenDot {
   cursor: pointer;
@@ -284,13 +304,23 @@ main .userInterface .user-selectNums .user-greenBalls .user-boxGreen {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-greenBalls .user-activeNumResult {
   border: 3px solid green;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-blueBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-blueBalls .for-select:hover {
+  border: 3px solid blue;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: blue;
 }
 main .userInterface .user-selectNums .user-blueBalls .user-blueDot {
   cursor: pointer;
@@ -311,13 +341,23 @@ main .userInterface .user-selectNums .user-blueBalls .user-boxBlue {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-blueBalls .user-activeNumResult {
   border: 3px solid blue;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-purpleBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-purpleBalls .for-select:hover {
+  border: 3px solid purple;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: purple;
 }
 main .userInterface .user-selectNums .user-purpleBalls .user-purpleDot {
   cursor: pointer;
@@ -338,13 +378,23 @@ main .userInterface .user-selectNums .user-purpleBalls .user-boxPurple {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-purpleBalls .user-activeNumResult {
   border: 3px solid purple;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-brownBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-brownBalls .for-select:hover {
+  border: 3px solid brown;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: brown;
 }
 main .userInterface .user-selectNums .user-brownBalls .user-brownDot {
   cursor: pointer;
@@ -365,13 +415,23 @@ main .userInterface .user-selectNums .user-brownBalls .user-boxBrown {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-brownBalls .user-activeNumResult {
   border: 3px solid brown;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-yellowBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-yellowBalls .for-select:hover {
+  border: 3px solid yellow;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: yellow;
 }
 main .userInterface .user-selectNums .user-yellowBalls .user-yellowDot {
   cursor: pointer;
@@ -392,13 +452,23 @@ main .userInterface .user-selectNums .user-yellowBalls .user-boxYellow {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-yellowBalls .user-activeNumResult {
   border: 3px solid yellow;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-orangeBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-orangeBalls .for-select:hover {
+  border: 3px solid orange;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: orange;
 }
 main .userInterface .user-selectNums .user-orangeBalls .user-orangeDot {
   cursor: pointer;
@@ -419,13 +489,23 @@ main .userInterface .user-selectNums .user-orangeBalls .user-boxOrange {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-orangeBalls .user-activeNumResult {
   border: 3px solid orange;
   color: white;
   background-color: rgb(71, 70, 70);
+}
+main .userInterface .user-selectNums .user-blackBalls .for-select {
+  cursor: pointer;
+}
+main .userInterface .user-selectNums .user-blackBalls .for-select:hover {
+  border: 3px solid black;
+  color: white;
+  background-color: rgb(71, 70, 70);
+  background-color: black;
 }
 main .userInterface .user-selectNums .user-blackBalls .user-blackDot {
   cursor: pointer;
@@ -446,7 +526,8 @@ main .userInterface .user-selectNums .user-blackBalls .user-boxBlack {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .userInterface .user-selectNums .user-blackBalls .user-activeNumResult {
@@ -496,7 +577,8 @@ main .userInterface .user-selectedNumsWrapper .user-selectedNums .user-viewTicke
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
   margin: 10px 3px;
   height: 40px;
@@ -577,7 +659,8 @@ main .userInterface .user-selectedNumsWrapper .user-selectedNums .user-successfu
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
   margin: 10px 3px;
   height: 40px;
@@ -669,7 +752,8 @@ main .showResults .showNumbersResult .redBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .redBalls .activeNumResult {
@@ -695,7 +779,8 @@ main .showResults .showNumbersResult .greenBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .greenBalls .activeNumResult {
@@ -721,7 +806,8 @@ main .showResults .showNumbersResult .blueBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .blueBalls .activeNumResult {
@@ -747,7 +833,8 @@ main .showResults .showNumbersResult .purpleBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .purpleBalls .activeNumResult {
@@ -773,7 +860,8 @@ main .showResults .showNumbersResult .brownBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .brownBalls .activeNumResult {
@@ -799,7 +887,8 @@ main .showResults .showNumbersResult .yellowBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .yellowBalls .activeNumResult {
@@ -825,7 +914,8 @@ main .showResults .showNumbersResult .orangeBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .orangeBalls .activeNumResult {
@@ -851,7 +941,8 @@ main .showResults .showNumbersResult .blackBalls .boxResult {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
 }
 main .showResults .showNumbersResult .blackBalls .activeNumResult {
@@ -887,7 +978,8 @@ main .showResults .showMoreInfo .firstBalls .firstFive {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
   border: 3px solid yellowgreen;
   color: white;
@@ -912,7 +1004,8 @@ main .showResults .showMoreInfo .cloverBalls .clover {
   align-items: center;
   font-size: 1.5rem;
   background-color: #15191c;
-  color: gray;
+  color: white;
+  text-shadow: 0px 0px 4px black;
   font-weight: 600;
   border: 3px solid yellowgreen;
   color: white;

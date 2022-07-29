@@ -21,7 +21,8 @@ $backNums: #15191c;
     align-items: center;
     font-size: 1.5rem;
     background-color: $backNums;
-    color: gray;
+    color: white;
+    text-shadow: 0px 0px 4px black;
     font-weight: 600;
 }
 @mixin activiti-result($color){
@@ -283,7 +284,15 @@ main{
             // width: 55%;
             justify-content: space-between;
             flex: 2;
+            user-select: none;
             .user-redBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(red);
+                        background-color: red;
+                    }
+                }
                 .user-redDot{
                     cursor: pointer;
                     @include dots(red);
@@ -296,6 +305,13 @@ main{
                 }
             }
             .user-greenBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(green);
+                        background-color: green;
+                    }
+                }
                 .user-greenDot{
                     cursor: pointer;
                     @include dots(green);
@@ -308,6 +324,13 @@ main{
                 }
             }
             .user-blueBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(blue);
+                        background-color: blue;
+                    }
+                }
                 .user-blueDot{
                     cursor: pointer;
                     @include dots(blue);
@@ -320,6 +343,13 @@ main{
                 }
             }
             .user-purpleBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(purple);
+                        background-color: purple;
+                    }
+                }
                 .user-purpleDot{
                     cursor: pointer;
                     @include dots(purple);
@@ -332,6 +362,13 @@ main{
                 }
             }
             .user-brownBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(brown);
+                        background-color: brown;
+                    }
+                }
                 .user-brownDot{
                     cursor: pointer;
                     @include dots(brown);
@@ -344,6 +381,13 @@ main{
                 }
             }
             .user-yellowBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(yellow);
+                        background-color: yellow;
+                    }
+                }
                 .user-yellowDot{
                     cursor: pointer;
                     @include dots(yellow);
@@ -356,6 +400,13 @@ main{
                 }
             }
             .user-orangeBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(orange);
+                        background-color: orange;
+                    }
+                }
                 .user-orangeDot{
                     cursor: pointer;
                     @include dots(orange);
@@ -368,6 +419,13 @@ main{
                 }
             }
             .user-blackBalls{
+                .for-select{
+                    cursor: pointer;
+                    &:hover{
+                        @include activiti-result(black);
+                        background-color: black;
+                    }
+                }
                 .user-blackDot{
                     cursor: pointer;
                     @include dots(black);
